@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="inGamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@InGame.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.PioneersController">
+    <ImageView id="background" fx:id="background" fitHeight="914.0" fitWidth="1600.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/ocean.png" />
+    </ImageView>
+    <Label id="loading_label" fx:id="loading_label" layoutX="693.0" layoutY="425.0" mouseTransparent="true" text="%loading.map" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+    </Label>
+    <AnchorPane fx:id="inGameAnchorPane" pickOnBounds="false" prefHeight="900.0" prefWidth="1600.0">
+        <Button id="exit_button" fx:id="exit_button" layoutX="11.0" layoutY="4.0" mnemonicParsing="false" onAction="#exit" prefHeight="58.0" prefWidth="165.0" styleClass="exit" text="%exit">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Button>
+        <Label fx:id="label_insufficient_res" layoutX="563.0" layoutY="25.0" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: transparent;" styleClass="label_insufficient_res">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="image_dice1" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="61.0" layoutY="758.0" onMouseClicked="#throwDice" pickOnBounds="true" preserveRatio="true" styleClass="dice" visible="false">
+            <Image url="@images/one.png" />
+        </ImageView>
+        <ImageView id="image_dice" fx:id="image_dice" disable="true" fitHeight="100.0" fitWidth="100.0" layoutX="166.0" layoutY="758.0" onMouseClicked="#throwDice" opacity="0.3" pickOnBounds="true" preserveRatio="true" styleClass="dice">
+            <Image url="@images/six.png" />
+        </ImageView>
+        <HBox layoutX="549.0" layoutY="736.0" />
+        <Pane layoutX="1222.0" layoutY="25.0">
+            <ImageView fitHeight="107.0" fitWidth="376.0" layoutX="-14.0" styleClass="plank">
+                <Image url="@images/game_assets/plank_2.png" />
+            </ImageView>
+            <Label fx:id="label_turn" alignment="CENTER" layoutX="11.0" layoutY="18.0" prefHeight="70.0" prefWidth="329.0" styleClass="whiteBackground" text="%founding.roll">
+                <font>
+                    <Font name="Hiragino Sans W8" size="22.0" />
+                </font>
+            </Label>
+        </Pane>
+        <Pane fx:id="player_spectator_list" layoutX="1163.0" layoutY="151.0">
+            <ImageView fitHeight="535.0" fitWidth="486.0" layoutY="17.0" mouseTransparent="true">
+                <Image url="@images/game_assets/scroll_2.png" />
+            </ImageView>
+            <ImageView fitHeight="76.0" fitWidth="241.0" layoutX="114.0" styleClass="plank">
+                <Image url="@images/game_assets/plank_1.png" />
+            </ImageView>
+            <Label id="playerLabel" fx:id="playerLabel" alignment="CENTER" layoutX="148.0" layoutY="15.0" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: transparent;" text="%players">
+                <font>
+                    <Font name="System Bold" size="30.0" />
+                </font>
+            </Label>
+            <VBox layoutX="95.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="300.0">
+                <Pane prefHeight="56.0" prefWidth="300.0">
+                    <ImageView id="spectator_image" fx:id="spectator_image" fitHeight="50.0" fitWidth="48.0" layoutX="259.0" layoutY="-18.0" onMouseClicked="#show_spectator_list" pickOnBounds="true" styleClass="spectatorImageStyle">
+                        <Image url="@images/eye.png" />
+                    </ImageView>
+                </Pane>
+                <ListView id="players_listview" fx:id="players_listview" onScroll="#playerListCatchZoom" prefHeight="412.0" prefWidth="311.0" style="-fx-background-color: transparent;" styleClass="playerSpectatorList" />
+            </VBox>
+            <ListView fx:id="spectators_listview" layoutX="95.0" layoutY="103.0" prefHeight="400.0" prefWidth="291.0" style="-fx-background-color: transparent;" styleClass="playerSpectatorList" visible="false" />
+        </Pane>
+        <HBox layoutX="1286.0" layoutY="729.0" prefHeight="150.0" prefWidth="300.0">
+            <Pane prefHeight="150.0" prefWidth="300.0">
+                <ImageView fitHeight="46.0" fitWidth="164.0" layoutX="24.0" layoutY="100.0">
+                    <effect>
+                        <DropShadow height="4.0" radius="1.5" spread="1.0" width="4.0" />
+                    </effect>
+                    <Image url="@images/game_assets/plank_4.png" />
+                </ImageView>
+                <Label fx:id="currentplayer_label" alignment="CENTER" layoutX="35.0" layoutY="108.0" prefHeight="28.0" prefWidth="142.0" style="-fx-background-radius: 24;" styleClass="whiteBackground" text="Player 1" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="101.0" fitWidth="201.0" layoutX="6.0" layoutY="10.0">
+                    <effect>
+                        <DropShadow height="4.0" radius="1.5" spread="1.0" width="4.0" />
+                    </effect>
+                    <Image url="@images/game_assets/plank_3.png" />
+                </ImageView>
+                <ImageView id="eye" fx:id="eye" fitHeight="70.0" fitWidth="70.0" layoutX="70.0" layoutY="25.0">
+                    <Image url="@images/eye.png" />
+                </ImageView>
+                <Pane id="own_player" fx:id="own_player" layoutX="12.0" layoutY="20.0" prefHeight="88.0" prefWidth="188.0" visible="false">
+                    <Label id="longest_road" fx:id="longest_road" alignment="CENTER" layoutX="17.0" layoutY="10.0" styleClass="counter" text="0" textFill="WHITE">
+                        <font>
+                            <Font name="Hiragino Sans W7" size="10.0" />
+                        </font>
+                    </Label>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="5.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                        <effect>
+                            <DropShadow height="15.0" radius="7.0" spread="0.2" width="15.0" />
+                        </effect>
+                        <Image url="@images/road.png" />
+                    </ImageView>
+                    <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="39.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <effect>
+                            <DropShadow height="15.0" radius="7.0" spread="0.2" width="15.0" />
+                        </effect>
+                        <Image url="@images/knight_Card.png" />
+                    </ImageView>
+                    <Label id="label_knight_own" fx:id="label_knight_own" alignment="CENTER" layoutX="67.0" layoutY="10.0" styleClass="counter" text="0" textFill="WHITE">
+                        <font>
+                            <Font name="Hiragino Sans W9" size="10.0" />
+                        </font>
+                    </Label>
+                    <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="88.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <effect>
+                            <DropShadow height="15.0" radius="7.0" spread="0.2" width="15.0" />
+                        </effect>
+                        <Image url="@images/development_Card.png" />
+                    </ImageView>
+                    <Label id="own_development_cards" fx:id="own_development_cards" alignment="CENTER" layoutX="115.0" layoutY="10.0" styleClass="counter" text="0" textFill="WHITE">
+                        <font>
+                            <Font name="Hiragino Sans W9" size="10.0" />
+                        </font>
+                    </Label>
+                    <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="136.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                        <effect>
+                            <DropShadow height="15.0" radius="7.0" spread="0.2" width="15.0" />
+                        </effect>
+                        <Image url="@images/resource_Card.png" />
+                    </ImageView>
+                    <Label fx:id="unknown_resource" alignment="CENTER" layoutX="163.0" layoutY="12.0" styleClass="counter" text="0" textFill="WHITE">
+                        <font>
+                            <Font name="Hiragino Sans W9" size="10.0" />
+                        </font>
+                    </Label>
+                </Pane>
+                <ImageView fx:id="currentplayer_image" fitHeight="80.0" fitWidth="80.0" layoutX="211.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                    <effect>
+                        <DropShadow height="10.0" radius="4.5" spread="1.0" width="10.0">
+                            <color>
+                                <Color red="1.0" green="1.0" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </ImageView>
+                <Label id="victory_points" fx:id="victory_points" alignment="CENTER" layoutX="283.0" layoutY="83.0" styleClass="counter" text="0" textFill="WHITE">
+                    <font>
+                        <Font name="Hiragino Sans W9" size="10.0" />
+                    </font>
+                </Label>
+            </Pane>
+        </HBox>
+        <Pane fx:id="chat_board" layoutX="10.0" layoutY="151.0">
+            <ImageView fitHeight="386.0" fitWidth="382.0" layoutX="-1.0" layoutY="118.0" styleClass="plank">
+                <Image url="@images/game_assets/plank_scroll_inGameChat.png" />
+            </ImageView>
+            <ImageView fitHeight="58.0" fitWidth="248.0" layoutX="13.0" layoutY="523.0" styleClass="plank">
+                <Image url="@images/game_assets/plank_2.png" />
+            </ImageView>
+            <VBox id="chatParent" fx:id="chatParent" layoutX="24.0" layoutY="85.0" onScroll="#chatCatchZoom" prefHeight="486.0" prefWidth="350.0">
+                <fx:include fx:id="chat" source="inGameChat.fxml" />
+            </VBox>
+        </Pane>
+        <HBox layoutX="314.0" layoutY="740.0" pickOnBounds="false">
+            <Pane id="buildMenu" fx:id="buildMenu" prefHeight="150.0" prefWidth="1030.0">
+                <ImageView fitHeight="157.0" fitWidth="1020.0" layoutX="-32.0" layoutY="-1.0" styleClass="scroll">
+                    <Image url="@images/game_assets/scroll.png" />
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="18.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" styleClass="cardNoHover">
+                    <Image url="@images/lumber_Card.png" />
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="84.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" styleClass="cardNoHover">
+                    <Image url="@images/wool_Card.png" />
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="150.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" styleClass="cardNoHover">
+                    <Image url="@images/ore_Card.png" />
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="216.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" styleClass="cardNoHover">
+                    <Image url="@images/brick_Card.png" />
+                </ImageView>
+                <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="282.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" styleClass="cardNoHover">
+                    <Image url="@images/grain_Card.png" />
+                </ImageView>
+                <ImageView id="development_menu" fx:id="development_menu" fitHeight="70.0" fitWidth="70.0" layoutX="349.0" layoutY="47.0" onMouseClicked="#openDevelopmentMenu" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                    <Image url="@images/development_Card.png" />
+                </ImageView>
+                <Label fx:id="label_lumber" alignment="CENTER" layoutX="49.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label_wool" alignment="CENTER" layoutX="117.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label_ore" alignment="CENTER" layoutX="182.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label_brick" alignment="CENTER" layoutX="248.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="label_grain" alignment="CENTER" layoutX="315.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <ButtonBar layoutX="490.0" layoutY="47.0" />
+                <Label id="label_development" fx:id="label_development" alignment="CENTER" layoutX="380.0" layoutY="45.0" mouseTransparent="true" styleClass="counter" text="0">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Group id="buildMenu_button_group" fx:id="buildMenu_button_group" layoutX="492.0" layoutY="-3.0">
+                    <Button id="button_development_card" fx:id="button_development_card" layoutX="-71.0" layoutY="52.0" mnemonicParsing="false" onAction="#getDevelopmentCard" onMouseEntered="#showCostDevelopment" onMouseExited="#hideCostDevelopment" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="163.0" prefWidth="146.0">
+                                <children>
+                                    <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                        <image>
+                                            <Image url="@images/game_assets/button_background.png" />
+                                        </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imageview_settlement_roof1" fitHeight="70.0" fitWidth="48.0" layoutX="3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@images/development_icon.png" />
+                                        </image>
+                                    </ImageView>
+                                </children>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <Button id="button_settlement" fx:id="button_settlement" layoutX="19.0" layoutY="52.0" mnemonicParsing="false" onAction="#buildSettlement" onMouseEntered="#showCostSettlement" onMouseExited="#hideCostSettlement" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="163.0" prefWidth="146.0">
+                                <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                    <Image url="@images/game_assets/button_background.png" />
+                                </ImageView>
+                                <ImageView fx:id="imageview_settlement" fitHeight="59.0" fitWidth="48.0" layoutX="3.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/map assets/elements/settlement_body.png" />
+                                </ImageView>
+                                <ImageView fx:id="imageview_settlement_roof" fitHeight="59.0" fitWidth="48.0" layoutX="3.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/map assets/elements/settlement_roof.png" />
+                                </ImageView>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <Button id="button_city" fx:id="button_city" layoutX="108.0" layoutY="52.0" mnemonicParsing="false" onAction="#buildCity" onMouseEntered="#showCityCost" onMouseExited="#hideCityCost" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="200.0" prefWidth="200.0">
+                                <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                    <Image url="@images/game_assets/button_background.png" />
+                                </ImageView>
+                                <ImageView fx:id="imageview_city" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/map assets/elements/city_body.png" />
+                                </ImageView>
+                                <ImageView fx:id="imageview_city_roof" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/map assets/elements/city_roof.png" />
+                                </ImageView>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <Button id="button_road" fx:id="button_road" layoutX="198.0" layoutY="52.0" mnemonicParsing="false" onAction="#buildRoad" onMouseEntered="#showRoadCost" onMouseExited="#hideRoadCost" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="200.0" prefWidth="200.0">
+                                <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                    <Image url="@images/game_assets/button_background.png" />
+                                </ImageView>
+                                <ImageView fx:id="imageview_road" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/road.png" />
+                                </ImageView>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <Button id="button_trade" fx:id="button_trade" layoutX="287.0" layoutY="52.0" mnemonicParsing="false" onAction="#openTradeMenu" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="200.0" prefWidth="200.0">
+                                <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                    <Image url="@images/game_assets/button_background.png" />
+                                </ImageView>
+                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/trade.png" />
+                                </ImageView>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <Button id="button_endTurn" fx:id="button_endTurn" layoutX="375.0" layoutY="52.0" mnemonicParsing="false" onAction="#endTurn" prefHeight="70.0" prefWidth="70.0" styleClass="building_menu_button">
+                        <graphic>
+                            <Pane prefHeight="200.0" prefWidth="200.0">
+                                <ImageView fitHeight="76.0" fitWidth="76.0" layoutX="-11.0" layoutY="-7.0" styleClass="build_button">
+                                    <Image url="@images/game_assets/button_background.png" />
+                                </ImageView>
+                                <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@images/end_turn.png" />
+                                </ImageView>
+                            </Pane>
+                        </graphic>
+                    </Button>
+                    <HBox fx:id="cost_settlement_pop" mouseTransparent="true" prefHeight="50.0" prefWidth="200.0" spacing="5.0" visible="false">
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/lumber_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/wool_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/brick_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/grain_Card.png" />
+                        </ImageView>
+                    </HBox>
+                    <HBox fx:id="cost_city_pop" layoutX="79.0" mouseTransparent="true" prefHeight="50.0" prefWidth="200.0" spacing="5.0" visible="false">
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/ore_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/ore_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/ore_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/grain_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/grain_Card.png" />
+                        </ImageView>
+                    </HBox>
+                    <HBox fx:id="cost_road_pop" layoutX="218.0" mouseTransparent="true" prefHeight="50.0" prefWidth="85.0" spacing="5.0" visible="false">
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/lumber_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/brick_Card.png" />
+                        </ImageView>
+                    </HBox>
+                    <HBox fx:id="cost_development_card" layoutX="-75.0" mouseTransparent="true" prefHeight="50.0" prefWidth="114.0" spacing="5.0" visible="false">
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/wool_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/ore_Card.png" />
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="27.0">
+                            <Image url="@images/grain_Card.png" />
+                        </ImageView>
+                    </HBox>
+                </Group>
+            </Pane>
+        </HBox>
+        <Pane id="trade_menu" layoutX="352.0" layoutY="592.0" pickOnBounds="false" prefHeight="285.0" prefWidth="1.0">
+            <fx:include id="tradeMenu" fx:id="tradeMenu" source="trade_menu_player.fxml" />
+        </Pane>
+        <Pane id="robMenuContainer" layoutX="343.0" layoutY="560.0" pickOnBounds="false" prefHeight="184.0" prefWidth="1.0">
+            <fx:include fx:id="robMenu" source="robMenu.fxml" />
+        </Pane>
+        <Pane id="trade_parter" fx:id="trade_parter" layoutX="671.0" layoutY="10.0" onScroll="#tradePartnerCatchZoom" pickOnBounds="false" prefHeight="200.0" prefWidth="500.0">
+            <fx:include fx:id="tradingPartner" source="trade_accept_list.fxml" />
+        </Pane>
+        <Pane fx:id="offer_menu" layoutX="696.0" layoutY="-61.0" pickOnBounds="false" prefHeight="200.0" prefWidth="500.0">
+            <fx:include fx:id="offerMenu" source="trade_offer.fxml" />
+        </Pane>
+        <Pane layoutX="522.0" layoutY="140.0" pickOnBounds="false" prefHeight="200.0" prefWidth="1.0">
+            <fx:include id="keyboardShortcut" fx:id="keyboardShortcut" source="keyboard_shortcuts_menu.fxml" />
+        </Pane>
+        <ImageView id="book" fx:id="book" fitHeight="59.0" fitWidth="61.0" layoutX="9.0" layoutY="136.0" onMouseClicked="#bookClicked" pickOnBounds="true" preserveRatio="true" styleClass="scaleHover">
+            <Image url="@images/book.png" />
+        </ImageView>
+        <ImageView layoutX="13.0" layoutY="79.0" onMouseClicked="#openMusicMenu" pickOnBounds="true" styleClass="scaleHover">
+            <Image url="@images/sound_settings/volume_down_FILL0_wght400_GRAD0_opsz48_Kopie.png" />
+        </ImageView>
+        <fx:include fx:id="musicMenu" layoutX="70.0" layoutY="50.0" source="musicMenu.fxml" />
+        <Pane layoutX="392.0" layoutY="400.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+                <Image url="@images/pop_up_button_right.png" />
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#toggleChat">
+                <Image url="@images/pop_up_button_left.png" />
+            </ImageView>
+        </Pane>
+        <Pane layoutX="1162.0" layoutY="400.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0">
+                <Image url="@images/pop_up_button_left.png" />
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#togglePlayerList">
+                <Image url="@images/pop_up_button_right.png" />
+            </ImageView>
+        </Pane>
+        <Pane layoutX="851.0" layoutY="-361.0" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+            <fx:include id="longestRoad" fx:id="longestRoad" source="longest_road_pop.fxml" />
+        </Pane>
+        <fx:include fx:id="plentyMonopoly" layoutX="460.0" layoutY="565.0" source="yearOfPlenty_Monopoly.fxml" />
+        <Pane id="development_cards_menu" layoutX="477.0" layoutY="608.0" pickOnBounds="false" prefHeight="150.0" prefWidth="600.0">
+            <fx:include id="developmentCards" fx:id="developmentCards" source="developmentCardsMenu.fxml" />
+        </Pane>
+        <Pane layoutX="958.0" layoutY="-30.0" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0">
+            <fx:include id="miniPop" fx:id="miniPop" source="mini_pop.fxml" />
+        </Pane>
+    </AnchorPane>
+   <Pane id="rootEmojiMenu" fx:id="rootEmojiMenu" layoutX="300.0" layoutY="600.0" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <children>
+         <VBox>
+            <children>
+               <HBox spacing="5.0">
+                  <children>
+                     <TextField fx:id="txtSearch" focusTraversable="false" promptText="Search emoji" HBox.hgrow="ALWAYS" />
+                     <ComboBox fx:id="boxTone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="51.0" />
+                  </children>
+               </HBox>
+               <AnchorPane VBox.vgrow="ALWAYS">
+                  <children>
+                     <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <tabs>
+                           <Tab text="Frequently Used">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="People">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Nature">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Food">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Activity">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Travel">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Objects">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Symbols">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Flags">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Regional">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Extras">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                        </tabs>
+                     </TabPane>
+                     <ScrollPane fx:id="searchScrollPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <content>
+                           <FlowPane fx:id="searchFlowPane" />
+                        </content>
+                     </ScrollPane>
+                  </children>
+               </AnchorPane>
+            </children>
+         </VBox>
+      </children>
+   </Pane>
+</Pane>

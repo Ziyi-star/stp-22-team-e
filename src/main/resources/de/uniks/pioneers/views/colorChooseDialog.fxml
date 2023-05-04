@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="@light-theme.css" xmlns="http://javafx.com/javafx/18"
+            fx:controller="de.uniks.pioneers.controller.ColorController">
+    <content>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+              prefHeight="400.0" prefWidth="600.0">
+            <HBox alignment="CENTER" prefHeight="480.0" prefWidth="600.0">
+                <VBox alignment="CENTER" prefHeight="380.0" prefWidth="340.0">
+                    <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="40.0" maxWidth="348.0" minHeight="30.0"
+                           minWidth="117.0" prefHeight="40.0" prefWidth="348.0" text="%choose.color">
+                        <VBox.margin>
+                            <Insets bottom="20.0" top="20.0"/>
+                        </VBox.margin>
+                        <font>
+                            <Font name="System Bold" size="24.0"/>
+                        </font>
+                    </Label>
+                    <ListView id="colorListView" fx:id="colorListView" minHeight="200.0" minWidth="350.0"
+                              prefHeight="200.0" prefWidth="350.0" styleClass="color"/>
+                    <Label id="error_Label" fx:id="error_Label" prefHeight="18.0" prefWidth="147.0"/>
+                    <Button id="applyColor_button" fx:id="applyColor_button" mnemonicParsing="false"
+                            onAction="#applyColor" prefHeight="43.0" prefWidth="120.0" styleClass="smallButton"
+                            text="%apply" textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                        <VBox.margin>
+                            <Insets top="10.0"/>
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane>

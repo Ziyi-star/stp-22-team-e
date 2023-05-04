@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="150.0" prefWidth="238.0" xmlns="http://javafx.com/javafx/17"
+      fx:controller="de.uniks.pioneers.controller.MusicController">
+    <ImageView fitHeight="148.0" fitWidth="237.0">
+        <Image url="@images/sound_settings/pixlr-bg-result_-_Kopie_2.png"/>
+    </ImageView>
+    <ImageView id="imageview_music" fx:id="imageview_music" fitHeight="30.0" fitWidth="30.0" layoutX="15.0"
+               layoutY="32.0"
+               onMouseClicked="#toggleMusicMute" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/sound_settings/music_unmuted.png"/>
+    </ImageView>
+    <ImageView id="imageview_sound" fx:id="imageview_sound" fitHeight="30.0" fitWidth="30.0" layoutX="16.0"
+               layoutY="94.0"
+               onMouseClicked="#toggleSoundMute" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/sound_settings/sound_unmuted.png"/>
+    </ImageView>
+    <Slider fx:id="slider_music" blockIncrement="1.0" layoutX="50.0" layoutY="44.0" prefHeight="14.0" prefWidth="165.0"
+            showTickMarks="true" value="50.0"/>
+    <Slider fx:id="slider_sound" blockIncrement="1.0" layoutX="50.0" layoutY="104.0" prefHeight="14.0" prefWidth="165.0"
+            showTickMarks="true" value="50.0"/>
+    <Label alignment="CENTER" layoutX="94.0" layoutY="27.0" text="%music.volume" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="12.0"/>
+        </font>
+    </Label>
+    <Label alignment="CENTER" layoutX="92.0" layoutY="84.0" text="%sound.volume" textAlignment="CENTER">
+        <font>
+            <Font name="System Bold" size="12.0"/>
+        </font>
+    </Label>
+</Pane>

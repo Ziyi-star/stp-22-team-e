@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="75.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/18">
+    <ImageView fitHeight="82.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/dbs_logo.png"/>
+    </ImageView>
+    <Pane prefHeight="136.0" prefWidth="54.0"/>
+    <ImageView fitHeight="63.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/logo_noeyes_even_smaller.png"/>
+    </ImageView>
+</HBox>

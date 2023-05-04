@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="@light-theme.css" xmlns="http://javafx.com/javafx/17"
+            fx:controller="de.uniks.pioneers.controller.ProfileSettingsController">
+    <content>
+        <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+              minWidth="-Infinity"
+              prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: white;"
+              xmlns="http://javafx.com/javafx/17">
+            <padding>
+                <Insets top="30.0"/>
+            </padding>
+            <HBox alignment="CENTER" prefHeight="102.0" prefWidth="400.0">
+                <VBox prefHeight="91.0" prefWidth="140.0">
+                    <CheckBox id="checkbox_name" fx:id="checkbox_name" mnemonicParsing="false" onAction="#changeName"
+                              text="%name:">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                    </CheckBox>
+                    <TextField id="textfield_name" fx:id="textfield_name" prefHeight="45.0" promptText="%newname">
+                        <VBox.margin>
+                            <Insets top="10.0"/>
+                        </VBox.margin>
+                    </TextField>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="151.0" prefWidth="400.0">
+                <VBox prefHeight="160.0" prefWidth="140.0">
+                    <CheckBox id="checkbox_password" fx:id="checkbox_password" mnemonicParsing="false"
+                              onAction="#changePassword" text="%password:">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                    </CheckBox>
+                    <PasswordField id="textfield_password" fx:id="textfield_password" prefHeight="45.0"
+                                   promptText="%newpassword">
+                        <VBox.margin>
+                            <Insets top="15.0"/>
+                        </VBox.margin>
+                    </PasswordField>
+                    <PasswordField id="textfield_password_repeat" fx:id="textfield_password_repeat" layoutX="10.0"
+                                   layoutY="28.0" prefHeight="45.0" promptText="%repeatnewpassword">
+                        <VBox.margin>
+                            <Insets top="15.0"/>
+                        </VBox.margin>
+                    </PasswordField>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" maxHeight="150.0" prefHeight="134.0"
+                  prefWidth="400.0">
+                <VBox.margin>
+                    <Insets top="20.0"/>
+                </VBox.margin>
+                <VBox prefHeight="137.0" prefWidth="140.0">
+                    <CheckBox id="checkbox_avatar" fx:id="checkbox_avatar" mnemonicParsing="false"
+                              onAction="#changeAvatar" text="%avatar:">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                    </CheckBox>
+                    <HBox alignment="CENTER" prefHeight="84.0" prefWidth="122.0">
+                        <Button id="arrow_left_avatar" fx:id="arrow_left_avatar" mnemonicParsing="false"
+                                onAction="#prevAvatar" style="-fx-background-color: white;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@images/arrow_back.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <ImageView id="imageview_avatar" fx:id="imageview_avatar" fitHeight="85.0" fitWidth="84.0"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets top="10.0"/>
+                            </HBox.margin>
+                            <Image url="@images/arrow_back.png"/>
+                        </ImageView>
+                        <Button id="arrow_right_avatar" fx:id="arrow_right_avatar" mnemonicParsing="false"
+                                onAction="#nextAvatar" style="-fx-background-color: white;">
+                            <graphic>
+                                <ImageView>
+                                    <Image url="@images/arrow_forward.png"/>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="79.0" prefWidth="350.0">
+                <VBox prefHeight="30.0" prefWidth="140.0">
+                    <Label text="%language:">
+                        <font>
+                            <Font name="System Bold" size="14.0"/>
+                        </font>
+                        <VBox.margin>
+                            <Insets top="10.0"/>
+                        </VBox.margin>
+                    </Label>
+                    <RadioButton id="radio_english" fx:id="radio_english" mnemonicParsing="false" text="%english">
+                        <VBox.margin>
+                            <Insets bottom="10.0" top="10.0"/>
+                        </VBox.margin>
+                    </RadioButton>
+                    <RadioButton id="radio_german" fx:id="radio_german" mnemonicParsing="false" text="%german"/>
+                </VBox>
+            </HBox>
+            <Label id="match_label" fx:id="match_label" prefHeight="17.0" prefWidth="411.0">
+                <VBox.margin>
+                    <Insets bottom="20.0" right="20.0" top="20.0"/>
+                </VBox.margin>
+                <padding>
+                    <Insets left="130.0"/>
+                </padding>
+            </Label>
+            <Label id="error_Label" fx:id="error_Label" prefHeight="17.0" prefWidth="411.0">
+                <padding>
+                    <Insets left="130.0"/>
+                </padding>
+            </Label>
+            <Pane prefHeight="16.0" prefWidth="400.0"/>
+            <HBox alignment="CENTER" prefHeight="95.0" prefWidth="400.0">
+                <Button id="btn_apply" fx:id="btn_apply" maxHeight="54.0" minHeight="45.0" mnemonicParsing="false"
+                        onAction="#applySettings" prefHeight="54.0" prefWidth="180.0" styleClass="normalButton"
+                        text="%apply">
+                    <font>
+                        <Font name="System Bold" size="18.0"/>
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane>

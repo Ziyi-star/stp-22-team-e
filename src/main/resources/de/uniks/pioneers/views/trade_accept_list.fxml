@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="562.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.TradingPartnerSubController">
+    <ImageView fitHeight="110.0" fitWidth="250.0" layoutX="3.0" layoutY="2.0">
+        <Image url="@images/game_assets/plank_3.png" />
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+    </ImageView>
+    <ImageView fitHeight="110.0" fitWidth="250.0" layoutX="250.0" layoutY="2.0">
+        <Image url="@images/game_assets/plank_3.png" />
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+    </ImageView>
+    <ImageView fitHeight="115.0" fitWidth="512.0" layoutX="-7.0" layoutY="104.0">
+        <Image url="@images/game_assets/plank_3.png" />
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+    </ImageView>
+    <Label alignment="CENTER" layoutX="49.0" layoutY="11.0" prefHeight="19.0" prefWidth="160.0" styleClass="whiteBackground" text="%accept.offer">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+    <Label alignment="CENTER" layoutX="293.0" layoutY="11.0" prefHeight="19.0" prefWidth="175.0" styleClass="whiteBackground" text="%counteroffer">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+    <ImageView fx:id="current_player" fitHeight="50.0" fitWidth="50.0" layoutX="424.0" layoutY="136.0">
+        <effect>
+            <DropShadow height="10.0" radius="4.5" spread="1.0" width="10.0">
+                <color>
+                    <Color red="0.6386655569076538" green="0.047575537115335464" blue="0.9342105388641357" />
+                </color>
+            </DropShadow>
+        </effect>
+        <Image url="@images/game_assets/button_background.png" />
+    </ImageView>
+    <ImageView fitHeight="59.0" fitWidth="83.0" layoutX="363.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/arrow_back.png" />
+    </ImageView>
+    <ImageView id="accept_button" fx:id="image_check" disable="true" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="111.0" onMouseClicked="#acceptOffer" opacity="0.3">
+        <Image url="@images/accept.png" />
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+    </ImageView>
+    <ImageView fx:id="imageview_reject" fitHeight="50.0" fitWidth="50.0" layoutX="500.0" layoutY="162.0" onMouseClicked="#closeMenu">
+        <Image url="@images/reject.png" />
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+    </ImageView>
+    <ImageView fx:id="partner_avatar" fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="136.0">
+        <Image url="@images/player.png" />
+    </ImageView>
+    <ImageView fitHeight="59.0" fitWidth="83.0" layoutX="70.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+        <Image url="@images/arrow_back.png" />
+    </ImageView>
+    <HBox fx:id="hbox_trade_get" layoutX="128.0" layoutY="136.0" prefHeight="59.0" prefWidth="50.0" />
+    <HBox fx:id="hbox_trade_give" alignment="TOP_RIGHT" layoutX="309.0" layoutY="136.0" prefHeight="59.0" prefWidth="50.0" />
+    <ScrollPane fx:id="scrollpane_accept" layoutX="35.0" layoutY="33.0">
+        <HBox fx:id="hbox_trade_players" prefHeight="59.0" prefWidth="185.0" spacing="6.0">
+            <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </padding>
+        </HBox>
+    </ScrollPane>
+    <ScrollPane fx:id="scrollpane_offer" layoutX="286.0" layoutY="33.0">
+        <HBox fx:id="hbox_counteroffer" prefHeight="59.0" prefWidth="185.0" spacing="6.0">
+            <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </padding>
+        </HBox>
+    </ScrollPane>
+</Pane>

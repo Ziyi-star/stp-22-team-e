@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane prefHeight="569.0" prefWidth="559.0" style="-fx-background-color: transparent;" stylesheets="@light-theme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.LobbySelectController">
+    <content>
+        <AnchorPane prefHeight="560.0" prefWidth="618.0">
+            <Label layoutX="80.0" layoutY="50.0" text="%lobbyname">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <TextField id="lobbyName_field" fx:id="lobbyName_field" layoutX="258.0" layoutY="33.0" prefHeight="60.0" prefWidth="202.0" promptText="%lobbyname">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </TextField>
+            <PasswordField id="lobbyPassword_field" fx:id="lobbyPassword_field" layoutX="258.0" layoutY="107.0" prefHeight="60.0" prefWidth="202.0" promptText="%lobbypassword">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </PasswordField>
+            <Button id="create_button" fx:id="create_button" layoutX="166.0" layoutY="412.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="220.0" styleClass="normalButton" text="%create.lobby" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Button>
+            <Button id="cancel_button" fx:id="cancel_button" layoutX="221.0" layoutY="486.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="118.0" styleClass="smallButton" text="%cancel" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="80.0" layoutY="124.0" prefHeight="27.0" prefWidth="130.0" text="%lobbypassword">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="196.0" text="%mapsize">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="261.0" text="%victorypoints">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <TextField id="map_size_field" fx:id="map_size_field" alignment="CENTER" editable="false" layoutX="258.0" layoutY="192.0" prefHeight="35.0" prefWidth="35.0" text="2" />
+            <Slider id="map_size_slider" fx:id="map_size_slider" blockIncrement="1.0" layoutX="309.0" layoutY="198.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" prefHeight="14.0" prefWidth="151.0" showTickMarks="true" snapToTicks="true" value="2.0" />
+            <TextField id="victory_points_field" fx:id="victory_points_field" alignment="CENTER" editable="false" layoutX="258.0" layoutY="257.0" prefHeight="35.0" prefWidth="35.0" text="10" />
+            <Slider id="victory_point_slider" fx:id="victory_point_slider" blockIncrement="1.0" layoutX="309.0" layoutY="263.0" majorTickUnit="1.0" max="15.0" min="3.0" minorTickCount="0" prefHeight="14.0" prefWidth="151.0" showTickMarks="true" snapToTicks="true" value="10.0" />
+            <Label id="error_Label" fx:id="error_Label" alignment="CENTER" layoutX="233.0" layoutY="379.0" prefHeight="25.0" prefWidth="135.0">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="324.0" text="%start.resources">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <Label layoutX="334.0" layoutY="323.0" text="%roll7">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Label>
+            <TextField id="start_resources" fx:id="start_resources" alignment="CENTER" layoutX="258.0" layoutY="319.0" prefHeight="35.0" prefWidth="35.0" text="0" />
+            <CheckBox id="roll7" fx:id="roll7" layoutX="432.0" layoutY="325.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="28.0" selected="true" />
+        </AnchorPane>
+    </content>
+</DialogPane>

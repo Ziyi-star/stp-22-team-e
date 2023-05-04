@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="root" fx:id="root" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.TradeAndDropSubController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="969.0">
+        <ImageView fitHeight="162.0" fitWidth="948.0" layoutX="-8.0">
+            <Image url="@images/game_assets/scroll_wide.png" />
+         <effect>
+            <DropShadow height="2.0" radius="0.5" spread="0.64" width="2.0" />
+         </effect>
+        </ImageView>
+        <ImageView fitHeight="203.0" fitWidth="959.0" layoutX="-11.0" layoutY="127.0">
+            <Image url="@images/game_assets/scroll_wide.png" />
+         <effect>
+            <DropShadow height="2.0" radius="0.5" spread="0.65" width="2.0" />
+         </effect>
+        </ImageView>
+        <ImageView id="image_lumber" fx:id="image_lumber" fitHeight="70.0" fitWidth="70.0" layoutX="37.0" layoutY="192.0" onMouseClicked="#increaseLumber" pickOnBounds="true" preserveRatio="true" styleClass="card">
+            <Image url="@images/lumber_Card.png" />
+        </ImageView>
+        <Label fx:id="label_lumber" alignment="CENTER" layoutX="68.0" layoutY="190.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Group fx:id="trade_rate_elements_group" layoutX="530.0" layoutY="175.0">
+            <ImageView id="image_lumber_gain" fx:id="image_lumber_gain" fitHeight="70.0" fitWidth="70.0" layoutY="2.0" onMouseClicked="#increaseLumberGained" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                <Image url="@images/lumber_Card.png" />
+            </ImageView>
+            <Label fx:id="label_ratio_lumber" alignment="CENTER" layoutX="3.0" layoutY="75.0" styleClass="counter" text="4 : 1">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font>
+            </Label>
+            <ImageView id="image_wool_gain" fx:id="image_wool_gain" fitHeight="70.0" fitWidth="70.0" layoutX="69.0" layoutY="3.0" onMouseClicked="#increaseWoolGained" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                <Image url="@images/wool_Card.png" />
+            </ImageView>
+            <Label fx:id="label_ratio_wool" alignment="CENTER" layoutX="74.0" layoutY="75.0" styleClass="counter" text="4 : 1">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font>
+            </Label>
+            <ImageView id="image_ore_gain" fx:id="image_ore_gain" fitHeight="70.0" fitWidth="70.0" layoutX="143.0" layoutY="3.0" onMouseClicked="#increaseOreGained" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                <Image url="@images/ore_Card.png" />
+            </ImageView>
+            <Label fx:id="label_ratio_ore" alignment="CENTER" layoutX="147.0" layoutY="75.0" styleClass="counter" text="4 : 1">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font>
+            </Label>
+            <ImageView id="image_brick_gain" fx:id="image_brick_gain" layoutX="216.0" layoutY="3.0" onMouseClicked="#increaseBrickGained" styleClass="card">
+                <Image url="@images/brick_Card.png" />
+            </ImageView>
+            <Label fx:id="label_ratio_brick" alignment="CENTER" layoutX="220.0" layoutY="75.0" styleClass="counter" text="4 : 1">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font>
+            </Label>
+            <ImageView id="image_grain_gain" fx:id="image_grain_gain" layoutX="286.0" layoutY="3.0" onMouseClicked="#increaseGrainGained" styleClass="card">
+                <Image url="@images/grain_Card.png" />
+            </ImageView>
+            <Label fx:id="label_ratio_grain" alignment="CENTER" layoutX="290.0" layoutY="75.0" styleClass="counter" text="4 : 1">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font>
+            </Label>
+        </Group>
+        <ImageView id="image_wool" fx:id="image_wool" fitHeight="70.0" fitWidth="70.0" layoutX="108.0" layoutY="192.0" onMouseClicked="#increaseWool" pickOnBounds="true" preserveRatio="true" styleClass="card">
+            <Image url="@images/wool_Card.png" />
+        </ImageView>
+        <Label fx:id="label_wool" alignment="CENTER" layoutX="141.0" layoutY="190.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView id="image_ore" fx:id="image_ore" fitHeight="70.0" fitWidth="70.0" layoutX="180.0" layoutY="192.0" onMouseClicked="#increaseOre" pickOnBounds="true" preserveRatio="true" styleClass="card">
+            <Image url="@images/ore_Card.png" />
+        </ImageView>
+        <Label fx:id="label_ore" alignment="CENTER" layoutX="212.0" layoutY="190.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="image_brick" layoutX="250.0" layoutY="191.0" onMouseClicked="#increaseBrick" styleClass="card">
+            <Image url="@images/brick_Card.png" />
+        </ImageView>
+        <Label fx:id="label_brick" alignment="CENTER" layoutX="283.0" layoutY="189.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <ImageView id="image_grain" fx:id="image_grain" layoutX="318.0" layoutY="191.0" onMouseClicked="#increaseGrain" styleClass="card">
+            <Image url="@images/grain_Card.png" />
+        </ImageView>
+        <Label fx:id="label_grain" alignment="CENTER" layoutX="353.0" layoutY="190.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Group id="trade_misc_elements_group" fx:id="trade_misc_elements_group" layoutX="50.0" layoutY="45.0">
+            <ImageView layoutX="84.0" layoutY="11.0">
+                <Image url="@images/arrow_forward.png" />
+            </ImageView>
+            <ImageView id="own_avatar" fx:id="own_avatar" fitHeight="64.0" fitWidth="64.0" layoutX="3.0" layoutY="3.0">
+                <effect>
+                    <DropShadow height="10.0" radius="4.5" spread="1.0" width="10.0">
+                        <color>
+                            <Color red="0.3841293156147003" green="0.04117933660745621" blue="0.6842105388641357" />
+                        </color>
+                    </DropShadow>
+                </effect>
+                <Image url="@images/game_assets/button_background.png" />
+            </ImageView>
+            <ImageView id="trade_partner_player" fx:id="trade_partner_player" fitHeight="64.0" fitWidth="64.0" layoutX="734.0" layoutY="4.0" onMouseClicked="#tradeWith" pickOnBounds="true">
+                <Image url="@images/player.png" />
+            </ImageView>
+            <ImageView id="image_close" fx:id="image_close" layoutX="798.0" layoutY="35.0" onMouseClicked="#hideMenu" pickOnBounds="true">
+                <Image url="@images/close.png" />
+            </ImageView>
+            <ImageView layoutX="684.0" layoutY="12.0">
+                <Image url="@images/arrow_back.png" />
+            </ImageView>
+        </Group>
+        <ImageView id="image_check" fx:id="image_check" layoutX="848.0" layoutY="32.0" onMouseClicked="#sendRequest" pickOnBounds="true">
+            <Image url="@images/check.png" />
+        </ImageView>
+        <HBox id="hbox_give" fx:id="hbox_give" layoutX="181.0" layoutY="43.0" prefHeight="79.0" prefWidth="274.0" spacing="10.0" />
+        <HBox fx:id="hbox_gain" alignment="TOP_RIGHT" layoutX="455.0" layoutY="43.0" prefHeight="79.0" prefWidth="274.0" spacing="10.0" />
+        <Label id="drop_text" fx:id="drop_text" layoutX="454.0" layoutY="43.0" mouseTransparent="true" text="%Choose half of your resources to discard them" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label id="drop_text_left" fx:id="drop_text_left" layoutX="457.0" layoutY="188.0" mouseTransparent="true" prefHeight="35.0" prefWidth="508.0" text="%drop.resources.left" textAlignment="CENTER">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label id="drop_text_left_counter" fx:id="drop_text_left_counter" layoutX="560.0" layoutY="222.0" mouseTransparent="true" text="0/0" textAlignment="CENTER">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+    </AnchorPane>
+</VBox>

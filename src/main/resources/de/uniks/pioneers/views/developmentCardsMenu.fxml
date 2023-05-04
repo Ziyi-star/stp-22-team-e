@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="root_development_cards" fx:id="root_development_cards" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.DevelopmentCardsSubController">
+   <AnchorPane prefHeight="150.0" prefWidth="600.0">
+      <ImageView fitHeight="150.0" fitWidth="600.0" layoutY="-3.0">
+         <Image url="@images/game_assets/scroll.png" />
+      </ImageView>
+      <Group id="development_cards" layoutX="124.0" layoutY="36.0">
+         <ImageView id="knight_card" fx:id="knight_card" layoutX="-52.0" onMouseClicked="#developmentCardClicked" styleClass="card" userData="knight">
+            <Image url="@images/development_cards/development_Card_knight.png" />
+         </ImageView>
+         <ImageView id="road_building_card" fx:id="road_building_card" layoutX="50.0" onMouseClicked="#developmentCardClicked" styleClass="card" userData="road-building">
+            <Image url="@images/development_cards/development_Card_road.png" />
+         </ImageView>
+         <ImageView id="year_of_plenty_card" fx:id="year_of_plenty_card" layoutX="150.0" onMouseClicked="#developmentCardClicked" styleClass="card" userData="year-of-plenty">
+            <Image url="@images/development_cards/development_Card_plenty.png" />
+         </ImageView>
+         <ImageView id="monopoly_card" fx:id="monopoly_card" layoutX="250.0" onMouseClicked="#developmentCardClicked" styleClass="card" userData="monopoly">
+            <Image url="@images/development_cards/development_Card_monopoly.png" />
+         </ImageView>
+         <ImageView id="victory_point_card" fx:id="victory_point_card" layoutX="350.0" styleClass="card">
+            <Image url="@images/development_cards/development_Card_victorypoint.png" />
+         </ImageView>
+         <Label id="label_knight" fx:id="label_knight" alignment="CENTER" layoutX="-9.0" layoutY="-8.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label id="label_road_building" fx:id="label_road_building" alignment="CENTER" layoutX="93.0" layoutY="-7.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label id="label_year_of_plenty" fx:id="label_year_of_plenty" alignment="CENTER" layoutX="193.0" layoutY="-7.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label id="label_monopoly" fx:id="label_monopoly" alignment="CENTER" layoutX="293.0" layoutY="-8.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+         <Label id="label_victory_point" fx:id="label_victory_point" alignment="CENTER" layoutX="393.0" layoutY="-7.0" mouseTransparent="true" styleClass="counter" text="0">
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Label>
+      </Group>
+   </AnchorPane>
+</VBox>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="140.0" prefWidth="265.0" stylesheets="@InGame.css"
+      xmlns="http://javafx.com/javafx/18" fx:controller="de.uniks.pioneers.controller.PlayerListViewCell">
+    <GridPane id="player_grid" fx:id="player_grid" maxWidth="265.0" prefHeight="140.0" prefWidth="265.0"
+              style="-fx-border-color: grey; -fx-border-insets: 9; -fx-background-color: FFFFFF24;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Pane prefHeight="150.0" prefWidth="300.0">
+            <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="39.0" layoutY="25.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@images/knight_Card.png"/>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="84.0" layoutY="25.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@images/development_Card.png"/>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="128.0" layoutY="25.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@images/resource_Card.png"/>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="35.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/road.png"/>
+            </ImageView>
+            <Label id="longest_road" fx:id="longest_road" alignment="CENTER" layoutX="11.0" layoutY="19.0"
+                   styleClass="counterPlayerList" text="0" textFill="WHITE">
+                <font>
+                    <Font size="10.0"/>
+                </font>
+            </Label>
+            <Label id="label_knight_counter" fx:id="label_knight_counter" alignment="CENTER" layoutX="62.0"
+                   layoutY="20.0" styleClass="counterPlayerList" text="0" textFill="WHITE">
+                <font>
+                    <Font size="10.0"/>
+                </font>
+            </Label>
+            <Label fx:id="unknown_resource" alignment="CENTER" layoutX="153.0" layoutY="19.0"
+                   styleClass="counterPlayerList" text="0" textFill="WHITE">
+                <font>
+                    <Font size="10.0"/>
+                </font>
+            </Label>
+            <Label id="unknown_development_cards" fx:id="unknown_development_cards" alignment="CENTER" layoutX="107.0"
+                   layoutY="20.0" styleClass="counterPlayerList" text="0" textFill="WHITE">
+                <font>
+                    <Font size="10.0"/>
+                </font>
+            </Label>
+            <Label fx:id="player_name" alignment="CENTER" layoutX="21.0" layoutY="87.0" prefHeight="28.0"
+                   prefWidth="136.0" style="-fx-background-color: FFFFFF2F;" text="Player 1">
+                <font>
+                    <Font size="17.0"/>
+                </font>
+            </Label>
+            <ImageView fx:id="player_image" fitHeight="64.0" fitWidth="64.0" layoutX="175.0" layoutY="28.0"
+                       pickOnBounds="true" preserveRatio="true"/>
+        </Pane>
+    </GridPane>
+</HBox>

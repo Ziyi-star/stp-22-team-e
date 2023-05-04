@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.VictoryController">
+    <ImageView fitHeight="900.0" fitWidth="1600.0">
+        <effect>
+            <GaussianBlur radius="17.63" />
+        </effect>
+        <Image url="@images/ocean.png" />
+    </ImageView>
+    <ImageView fitHeight="720.0" fitWidth="1047.0" layoutX="286.0" layoutY="-61.0">
+        <Image url="@images/victory_screen/loral.png" />
+    </ImageView>
+    <Pane layoutX="412.0" prefHeight="507.0" prefWidth="794.0">
+        <ImageView fitHeight="335.0" fitWidth="354.0" layoutX="220.0" layoutY="152.0">
+            <effect>
+                <DropShadow height="3.0" radius="1.0" spread="1.0" width="3.0" />
+            </effect>
+            <Image url="@images/victory_screen/podium.png" />
+        </ImageView>
+        <ImageView id="firstImage" fx:id="firstImage" fitHeight="95.0" fitWidth="95.0" layoutX="350.0" layoutY="64.0" />
+        <ImageView id="thirdImage" fx:id="thirdImage" fitHeight="95.0" fitWidth="95.0" layoutX="468.0" layoutY="178.0" />
+        <ImageView id="secondImage" fx:id="secondImage" fitHeight="95.0" fitWidth="95.0" layoutX="232.0" layoutY="178.0" />
+        <ImageView fitHeight="152.0" fitWidth="1065.0" layoutX="-122.0" layoutY="397.0">
+            <effect>
+                <DropShadow height="2.28" radius="1.225" spread="1.0" width="4.62" />
+            </effect>
+            <Image url="@images/victory_screen/red_ribbon.png" />
+        </ImageView>
+        <Label id="gameNameLabel" fx:id="gameNameLabel" alignment="CENTER" layoutX="248.0" layoutY="423.0" prefHeight="53.0" prefWidth="326.0">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label id="secondLabel" fx:id="secondLabel" alignment="CENTER" layoutX="229.0" layoutY="283.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: #BBBBBCFF; -fx-border-color: #C4C4C5FF; -fx-border-width: 4; -fx-background-radius: 4; -fx-border-radius: 4;">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label id="thirdLabel" fx:id="thirdLabel" alignment="CENTER" layoutX="468.0" layoutY="283.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: #B9811BFF; -fx-border-color: #CE9939FF; -fx-border-width: 4; -fx-background-radius: 4; -fx-border-radius: 4;">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="firstLabel" alignment="CENTER" layoutX="348.0" layoutY="174.0" prefHeight="18.0" prefWidth="100.0" style="-fx-background-color: #F1B632FF; -fx-border-color: #FBCA51FF; -fx-border-width: 4; -fx-background-radius: 4; -fx-border-radius: 4;" styleClass="firstLabel">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </Pane>
+    <ImageView fitHeight="356.0" fitWidth="1219.0" layoutX="191.0" layoutY="555.0">
+        <effect>
+            <DropShadow height="2.28" radius="0.6399999999999999" spread="1.0" width="2.28" />
+        </effect>
+        <Image url="@images/game_assets/plank_3.png" />
+    </ImageView>
+    <Pane layoutX="276.0" layoutY="588.0" prefHeight="285.0" prefWidth="1047.0" style="-fx-border-color: black; -fx-border-radius: 4;">
+        <TableView id="victoryList" fx:id="victoryList" layoutX="1.0" prefHeight="286.0" prefWidth="1046.0" style="-fx-background-color: transparent;" styleClass="victoryListStyle" visible="false">
+            <columns>
+                <TableColumn id="placeList" fx:id="placeList" prefWidth="127.0" resizable="false" sortable="false" text="%place" />
+                <TableColumn id="playerProfileList" fx:id="playerProfileList" prefWidth="260.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%player" />
+                <TableColumn id="victoryPointsList" fx:id="victoryPointsList" minWidth="7.20001220703125" prefWidth="111.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%victorypoints" />
+                <TableColumn id="settlementsList" fx:id="settlementsList" prefWidth="108.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%settlements" />
+                <TableColumn id="citiesList" fx:id="citiesList" prefWidth="108.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%cities" />
+                <TableColumn id="roadsList" fx:id="roadsList" prefWidth="108.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%roads" />
+                <TableColumn id="longestRoadList" fx:id="longestRoadList" prefWidth="112.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%longest_Road" />
+            <TableColumn id="longestRoadList" fx:id="armyList" prefWidth="108.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="%army" />
+            </columns>
+        </TableView>
+    </Pane>
+    <Button id="exitButton" fx:id="exitButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="82.0" prefWidth="226.0" styleClass="largeButton" text="%exit">
+        <font>
+            <Font name="System Bold" size="36.0" />
+        </font>
+    </Button>
+   <Label id="loading_label" fx:id="loading_label" alignment="CENTER" layoutX="672.0" layoutY="698.0" mouseTransparent="true" prefHeight="58.0" prefWidth="277.0" text="%loading">
+      <font>
+         <Font name="System Bold" size="36.0" />
+      </font>
+   </Label>
+</AnchorPane>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.LobbySelectController">
+    <ImageView fitHeight="900.0" fitWidth="1600.0">
+        <Image url="@images/landscape.png" />
+    </ImageView>
+    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0">
+        <HBox prefHeight="248.0" prefWidth="1600.0">
+            <ImageView id="imageview_settings" fx:id="imageview_settings" fitHeight="51.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                <HBox.margin>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </HBox.margin>
+                <Image url="@images/settings.png" />
+            </ImageView>
+            <Pane prefHeight="61.0" prefWidth="1540.0">
+                <ImageView fitHeight="115.0" fitWidth="620.0" layoutX="460.0" layoutY="20.0">
+                    <Image url="@images/pioneers_logo.png" />
+                </ImageView>
+            </Pane>
+        </HBox>
+        <VBox prefHeight="828.0" prefWidth="1600.0">
+            <HBox prefHeight="846.0" prefWidth="1584.0">
+                <VBox.margin>
+                    <Insets left="10.0" right="10.0" />
+                </VBox.margin>
+                <VBox prefHeight="764.0" prefWidth="566.0">
+                    <fx:include fx:id="chat" source="lobbyChat.fxml" />
+                </VBox>
+                <Pane prefHeight="764.0" prefWidth="380.0" />
+                <VBox prefHeight="826.0" prefWidth="1274.0">
+                    <HBox prefHeight="521.0" prefWidth="1061.0">
+                        <TableView id="lobby_list" fx:id="lobby_list" prefWidth="1052.0">
+                            <columns>
+                                <TableColumn id="lobbyName_list" fx:id="lobbyName_list" minWidth="0.0" prefWidth="640.0" sortable="false" style="-fx-alignment: CENTER; -fx-font-size: 15px;" text="%lobbyname" />
+                                <TableColumn id="lobbyCreator_list" fx:id="lobbyCreator_list" minWidth="0.0" prefWidth="410.0" sortable="false" style="-fx-alignment: CENTER; -fx-font-size: 15px;" text="%lobbycreator" />
+                            </columns>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TableView>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets top="29.0" />
+                        </VBox.margin>
+                    </HBox>
+                    <HBox prefHeight="45.0" prefWidth="953.0">
+                        <VBox.margin>
+                            <Insets top="10.0" />
+                        </VBox.margin>
+                        <Button id="logOut_button" fx:id="logOut_button" mnemonicParsing="false" onAction="#logOut" prefHeight="45.0" prefWidth="196.0" styleClass="normalButton" text="%logout" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                        </Button>
+                  <Button id="mapMenuButton" fx:id="mapMenuButton" layoutX="221.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToMapMenu" prefHeight="45.0" prefWidth="198.0" styleClass="normalButton" text="%map.menu" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                        <Pane prefHeight="45.0" prefWidth="187.0" />
+                        <Button id="createLobby_button" fx:id="createLobby_button" mnemonicParsing="false" onAction="#createLobby" prefHeight="45.0" prefWidth="207.0" styleClass="normalButton" text="%createlobby" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button id="joinLobby_button" fx:id="joinLobby_button" mnemonicParsing="false" onAction="#joinLobby" prefHeight="45.0" prefWidth="215.0" styleClass="normalButton" text="%joinlobby" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </HBox>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <VBox.margin>
+                <Insets top="65.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+            <fx:include source="logos.fxml" />
+        </VBox>
+    </VBox>
+    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="63.0" onMouseClicked="#openMusicMenu" pickOnBounds="true" preserveRatio="true" styleClass="scaleHover">
+        <Image url="@images/sound_settings/volume_down_FILL0_wght400_GRAD0_opsz48.png" />
+    </ImageView>
+   <ImageView id="rules_image" fx:id="rules_image" fitHeight="62.0" fitWidth="62.0" layoutX="130.0" layoutY="2.0" onMouseClicked="#changeToRules" pickOnBounds="true" styleClass="scaleHover">
+      <image>
+         <Image url="@images/rules.png" />
+      </image>
+   </ImageView>
+    <fx:include fx:id="musicMenu" layoutX="110.0" layoutY="5.0" source="musicMenu.fxml" />
+   <Pane id="rootEmojiMenu" fx:id="rootEmojiMenu" layoutX="300.0" layoutY="600.0" mouseTransparent="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <children>
+         <VBox>
+            <children>
+               <HBox spacing="5.0">
+                  <children>
+                     <TextField fx:id="txtSearch" focusTraversable="false" promptText="Search emoji" HBox.hgrow="ALWAYS" />
+                     <ComboBox fx:id="boxTone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="51.0" />
+                  </children>
+               </HBox>
+               <AnchorPane VBox.vgrow="ALWAYS">
+                  <children>
+                     <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <tabs>
+                           <Tab text="Frequently Used">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="People">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Nature">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Food">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Activity">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Travel">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Objects">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Symbols">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Flags">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Regional">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                           <Tab text="Extras">
+                              <content>
+                                 <ScrollPane>
+                                    <content>
+                                       <FlowPane />
+                                    </content>
+                                 </ScrollPane>
+                              </content>
+                           </Tab>
+                        </tabs>
+                     </TabPane>
+                     <ScrollPane fx:id="searchScrollPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <content>
+                           <FlowPane fx:id="searchFlowPane" />
+                        </content>
+                     </ScrollPane>
+                  </children>
+               </AnchorPane>
+            </children>
+         </VBox>
+      </children>
+   </Pane>
+   <Label id="loading_label" fx:id="loading_label" alignment="CENTER" layoutX="518.0" layoutY="380.0" mouseTransparent="true" prefHeight="141.0" prefWidth="564.0" text="%loading" visible="false">
+      <font>
+         <Font name="System Bold" size="96.0" />
+      </font>
+   </Label>
+</AnchorPane>

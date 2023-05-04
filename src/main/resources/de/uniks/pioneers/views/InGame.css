@@ -1,0 +1,206 @@
+
+.card {
+    -fx-effect: dropshadow(gaussian, #4b4b4b, 8, 0.4, 3, 3);
+}
+
+.cardSelected {
+    -fx-effect: dropshadow(gaussian, #5bffff, 15, 0, 0, 0);
+}
+
+.cardNoHover {
+    -fx-effect: dropshadow(gaussian, #4b4b4b, 8, 0.4, 3, 3);
+}
+
+.dice {
+    -fx-effect: dropshadow(three-pass-box, black, 1.5, 1, 0, 0);
+}
+
+.scroll {
+    -fx-effect: dropshadow(three-pass-box, black, 0.5, 1, 0, 0);
+}
+
+.plank {
+    -fx-effect: dropshadow(three-pass-box, black, 1, 1, 0, 0);
+}
+
+.playerSpectatorList, .playerSpectatorList .list-cell{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.spectatorImageStyle:hover{
+    -fx-effect: dropshadow(gaussian, lightskyblue, 10, 0.3, 0 ,0);
+}
+
+.playerSpectatorList .list-cell:filled:selected:focused,
+.playerSpectatorList .list-cell:filled:selected{
+    -fx-background-color: transparent;
+}
+
+.build_button {
+    -fx-effect: dropshadow(gaussian, black, 1.6, 1, 0, 0);
+}
+
+.building_menu_button, .building_menu_button:hover {
+    -fx-effect: null;
+}
+
+.building_menu_button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.card:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.hous {
+    -fx-effect: dropshadow(gaussian, #ffffff, 0.1, 0, 0, 0);
+}
+
+.hous:hover {
+    -fx-effect: dropshadow(gaussian, #cceeff, 10, 0.4, 0, 0);
+}
+
+.tab {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-color: #ac6939;
+    -fx-border-color: black;
+    -fx-border-radius: 6 6 0 0;
+    -fx-background-radius: 6 6 0 0;
+}
+
+#inGamePane {
+    -fx-background-color: #3D5DA1;
+}
+
+.tab-label {
+    -fx-text-fill: white;
+}
+
+.tab:selected {
+    -fx-background-color: #8f592f;
+}
+
+.label {
+    -fx-text-fill: black;
+    -fx-border-width: 4;
+    -fx-background-radius: 3;
+    -fx-border-radius: 2;
+}
+
+.whiteBackground {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-insets: 1;
+    -fx-background-radius: 14px;
+
+}
+
+.label.counter, .label.playerLabel, .counterPlayerList {
+    -fx-background-color: dodgerblue;
+    -fx-border-color: dodgerblue;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.counterPlayerList{
+    -fx-font-size: 10;
+}
+
+.counterPlayerYellow{
+    -fx-background-color: yellow;
+    -fx-border-color: yellow;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.label.redCounter {
+    -fx-background-color: #c20000;
+    -fx-border-color: #c20000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.label.playerLabel {
+    -fx-border-radius: 8 8 0 0;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.list-view {
+    -fx-background-color: rgba(218, 232, 252, 0.48);
+}
+
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+}
+
+.table-view {
+    -fx-border-color: transparent;
+}
+
+.table-row-cell:even {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+}
+
+.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.table-view.chatBoxUser {
+    -fx-border-color: transparent;
+}
+
+
+.label_insufficient_res {
+    -fx-text-fill: red;
+}
+
+.exit {
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+}
+
+.scroll-pane{
+    -fx-background-color: transparent;
+}
+.chatScroll{
+    -fx-padding: 18 13 7 9;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+}
+
+.redNumbers{
+    -fx-text-fill: #c70000;
+}
+.blackNumbers{
+    -fx-text-fill: black;
+}
+.name {
+    -fx-text-fill: blue;
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" id="root" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="389.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/18"
+      fx:controller="de.uniks.pioneers.controller.KeyboardShortcutController">
+    <ImageView fitHeight="374.0" fitWidth="441.0" layoutX="14.0" layoutY="6.0">
+        <Image url="@images/game_assets/paper.png"/>
+    </ImageView>
+    <Label layoutX="90.0" layoutY="49.0" text="Zoom:">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <Label layoutX="90.0" layoutY="105.0" text="%map.drag">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <Button id="apply_button" fx:id="apply_button" layoutX="74.0" layoutY="307.0" mnemonicParsing="false"
+            onAction="#apply" prefHeight="44.0" prefWidth="150.0" styleClass="smallButton" text="%apply">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Button>
+    <TextField id="fullscreen" fx:id="fullscreen" editable="false" layoutX="209.0" layoutY="173.0"
+               mouseTransparent="true" onKeyPressed="#fullscreenType" prefHeight="25.0" prefWidth="108.0"/>
+    <TextField id="map" fx:id="map" editable="false" layoutX="209.0" layoutY="223.0" mouseTransparent="true"
+               onKeyPressed="#mapType" prefHeight="25.0" prefWidth="108.0"/>
+    <Label layoutX="83.0" layoutY="172.0" text="%fullscreen">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <Label layoutX="83.0" layoutY="222.0" text="%center.map">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <ImageView fitHeight="84.0" fitWidth="83.0" layoutX="244.0" layoutY="14.0">
+        <Image url="@images/mouse_wheel.png"/>
+    </ImageView>
+    <ImageView fitHeight="84.0" fitWidth="83.0" layoutX="244.0" layoutY="76.0">
+        <Image url="@images/mouse_lmb.png"/>
+    </ImageView>
+    <ImageView id="fullscreen_edit" fx:id="fullscreen_edit" fitHeight="36.0" fitWidth="36.0" layoutX="326.0"
+               layoutY="168.0" onMouseClicked="#fullscreenEdit" pickOnBounds="true">
+        <Image url="@images/edit_square8.png"/>
+    </ImageView>
+    <ImageView id="map_edit" fx:id="map_edit" fitHeight="36.0" fitWidth="36.0" layoutX="326.0" layoutY="217.0"
+               onMouseClicked="#mapEdit" pickOnBounds="true">
+        <Image url="@images/edit_square8.png"/>
+    </ImageView>
+    <Button id="reset_button" fx:id="reset_button" layoutX="269.0" layoutY="307.0" mnemonicParsing="false"
+            onAction="#reset" prefHeight="44.0" prefWidth="150.0" styleClass="smallButton" text="%reset">
+        <font>
+            <Font name="System Bold" size="18.0"/>
+        </font>
+    </Button>
+    <Label layoutX="84.0" layoutY="261.0" prefHeight="36.0" prefWidth="315.0" text="%key.info">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+</Pane>

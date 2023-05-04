@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+
+<VBox fx:id="root" minWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.TradeForOthersSubController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="521.0">
+        <ImageView fitHeight="125.0" fitWidth="228.0" layoutX="55.0" layoutY="77.0">
+            <effect>
+                <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+            </effect>
+            <Image url="@images/game_assets/plank_3.png" />
+        </ImageView>
+        <ImageView fx:id="current_player_avatar" fitHeight="50.0" fitWidth="50.0" layoutX="75.0" layoutY="115.0" pickOnBounds="true">
+            <effect>
+                <DropShadow height="6.0" radius="2.5" spread="1.0" width="6.0">
+                    <color>
+                        <Color red="0.5482252836227417" green="0.06566764414310455" blue="0.6447368264198303" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <Image url="@images/game_assets/button_background.png" />
+        </ImageView>
+        <ImageView fitHeight="125.0" fitWidth="228.0" layoutX="284.0" layoutY="78.0" scaleX="-1.0">
+            <effect>
+                <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+            </effect>
+            <Image url="@images/game_assets/plank_3.png" />
+        </ImageView>
+        <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="123.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <Image url="@images/arrow_back.png" />
+        </ImageView>
+        <ImageView fx:id="provider_avatar" fitHeight="50.0" fitWidth="50.0" layoutX="442.0" layoutY="112.0" pickOnBounds="true">
+            <effect>
+                <DropShadow height="6.0" radius="2.5" spread="1.0" width="6.0">
+                    <color>
+                        <Color green="0.35894736647605896" blue="0.6526315808296204" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <Image url="@images/game_assets/button_background.png" />
+        </ImageView>
+        <ImageView fx:id="image_close" fitHeight="37.0" fitWidth="37.0" layoutX="11.0" layoutY="122.0" onMouseClicked="#closeMenu">
+            <effect>
+                <DropShadow height="1.5" radius="0.25" spread="1.0" width="1.5" />
+            </effect>
+            <Image url="@images/reject.png" />
+        </ImageView>
+        <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="389.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@images/arrow_back.png" />
+        </ImageView>
+        <ImageView fx:id="imageview_accept" fitHeight="37.0" fitWidth="37.0" layoutX="11.0" layoutY="82.0" onMouseClicked="#acceptOffer">
+            <effect>
+                <DropShadow height="1.5" radius="0.25" spread="1.0" width="1.5" />
+            </effect>
+            <Image url="@images/accept.png" />
+        </ImageView>
+        <ImageView id="imageview_edit" fitHeight="37.0" fitWidth="37.0" layoutX="12.0" layoutY="161.0" onMouseClicked="#editOffer">
+            <effect>
+                <DropShadow height="1.5" radius="0.25" spread="1.0" width="1.5" />
+            </effect>
+            <Image url="@images/edit.png" />
+        </ImageView>
+        <HBox fx:id="hbox_trade_give" layoutX="186.0" layoutY="114.0" prefHeight="54.0" prefWidth="50.0" />
+        <HBox fx:id="hbox_trade_want" alignment="TOP_RIGHT" layoutX="335.0" layoutY="113.0" prefHeight="54.0" prefWidth="50.0" />
+    </AnchorPane>
+</VBox>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#back_login" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.CreditsController">
+    <Pane id="credits" fx:id="credits" maxHeight="2500.0" maxWidth="1600.0" minHeight="2500.0" minWidth="1600.0" prefHeight="2500.0" prefWidth="1600.0" style="-fx-background-color: black;">
+        <Label layoutX="690.0" layoutY="100.0" text="Credits" textFill="WHITE">
+            <font>
+                <Font size="64.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="59.0" fitWidth="153.0" layoutX="721.0" layoutY="200.0">
+            <Image url="@images/logo_noeyes_smaller_white.png" />
+        </ImageView>
+        <VBox alignment="TOP_CENTER" layoutX="559.0" layoutY="300.0" prefHeight="103.0" prefWidth="483.0" spacing="15.0">
+            <Label text="Event Horizon" textFill="WHITE">
+                <font>
+                    <Font size="36.0" />
+                </font>
+            </Label>
+            <Label text="Alexander Golke - PO/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Yonas Woldetsadik - SM/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Sonja Käsinger - PO/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Noah Schager - SM/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Sandro Schlusche - PO/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Tom Reuter - SM/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Yufu Chen - PO/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Ziyi Liu - SM/Dev" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+        </VBox>
+        <ImageView fitHeight="111.0" fitWidth="138.0" layoutX="732.0" layoutY="820.0">
+            <Image url="@images/dbs_logo_white.png" />
+        </ImageView>
+        <VBox alignment="TOP_CENTER" layoutX="559.0" layoutY="950.0" prefHeight="103.0" prefWidth="483.0" spacing="15.0">
+            <Label text="Dead Birds Society" textFill="WHITE">
+                <font>
+                    <Font size="36.0" />
+                </font>
+            </Label>
+            <Label text="Natascha Nolte - CEO" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Adrian Kunz - CTO" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="550.0" layoutY="1200.0" prefHeight="103.0" prefWidth="483.0" spacing="15.0">
+            <Label text="Game Assets" textFill="WHITE">
+                <font>
+                    <Font size="36.0" />
+                </font>
+            </Label>
+            <Label text="Avatare - Craftpix.net" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Icons - Google fonts" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Lobbyselect" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Background - Designed by Freepik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Ingame" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Tiles - Kenney" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Scroll - Designed by Pixabay" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Chat background - Designed by Freepik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Planks - Designed by Freepik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Buttons - Designed by Freepik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Victory frame  - Designed by Freepik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Harbor - Designed by Vexels.com" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Victory" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+            <Label text="Wreath - Designed by Pixabay" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Ribbon - Designed by Vecteezy.com" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Trophy - Mozilla" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="550.0" layoutY="2100.0" prefHeight="103.0" prefWidth="483.0" spacing="15.0">
+            <Label text="Sounds" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Background - HarumachiMusic" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Round start -  SergeQuadrado" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Dice -  AbdrTar" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Placing buildings - Music from mixkit" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Label text="Messages - Yonas Woldetsadik" textFill="WHITE">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+        </VBox>
+    </Pane>
+</VBox>

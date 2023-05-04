@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.PlentyMonopolySubController">
+   <ImageView fitHeight="228.0" fitWidth="630.0" layoutY="-24.0">
+      <Image url="@images/game_assets/scroll_wide.png" />
+   </ImageView>
+   <HBox layoutX="68.0" layoutY="85.0" prefHeight="78.0" prefWidth="438.0" spacing="50.0">
+      <Pane>
+         <ImageView id="lumber" onMouseClicked="#cardClicked" styleClass="card" userData="lumber">
+            <Image url="@images/lumber_Card.png" />
+         </ImageView>
+         <Label fx:id="label_lumber" layoutX="36.0" layoutY="-5.0" styleClass="counter" text="0">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </Pane>
+      <Pane>
+         <ImageView id="wool" onMouseClicked="#cardClicked" styleClass="card" userData="wool">
+            <Image url="@images/wool_Card.png" />
+         </ImageView>
+         <Label fx:id="label_wool" layoutX="36.0" layoutY="-5.0" styleClass="counter" text="0">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </Pane>
+      <Pane>
+         <ImageView id="ore" onMouseClicked="#cardClicked" styleClass="card" userData="ore">
+            <Image url="@images/ore_Card.png" />
+         </ImageView>
+         <Label fx:id="label_ore" layoutX="36.0" layoutY="-5.0" styleClass="counter" text="0">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </Pane>
+      <Pane>
+         <ImageView id="brick" onMouseClicked="#cardClicked" styleClass="card" userData="brick">
+            <Image url="@images/brick_Card.png" />
+         </ImageView>
+         <Label fx:id="label_brick" layoutX="36.0" layoutY="-5.0" styleClass="counter" text="0">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </Pane>
+      <Pane>
+         <ImageView id="grain" onMouseClicked="#cardClicked" styleClass="card" userData="grain">
+            <Image url="@images/grain_Card.png" />
+         </ImageView>
+         <Label fx:id="label_grain" layoutX="36.0" layoutY="-5.0" styleClass="counter" text="0">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </Pane>
+   </HBox>
+   <Label fx:id="label_prompt" layoutX="65.0" layoutY="19.0" prefHeight="50.0" prefWidth="465.0" text="%monopoly.label">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <ImageView fx:id="imageview_icon" fitHeight="64.0" fitWidth="64.0" layoutX="529.0" layoutY="85.0">
+      <Image url="@images/player.png" />
+   </ImageView>
+   <ImageView fx:id="imageview_check" fitHeight="50.0" fitWidth="50.0" layoutX="536.0" layoutY="31.0" onMouseClicked="#apply" pickOnBounds="true" preserveRatio="true">
+      <Image url="@images/check.png" />
+   </ImageView>
+</Pane>

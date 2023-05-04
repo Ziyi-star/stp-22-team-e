@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@MapEditor.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.MapEditorController">
+   <children>
+      <ImageView fitHeight="900.0" fitWidth="1600.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/landscape.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="896.0" fitWidth="982.0" layoutX="618.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/game_assets/transparentFrame.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="900.0" prefWidth="633.0">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="236.0" layoutX="20.0" layoutY="24.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="187.0" fitWidth="600.0" layoutX="22.0" layoutY="99.0">
+               <image>
+                  <Image url="@images/game_assets/scroll_wide.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="236.0" layoutX="20.0" layoutY="278.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="187.0" fitWidth="600.0" layoutX="22.0" layoutY="353.0">
+               <image>
+                  <Image url="@images/game_assets/scroll_wide.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="236.0" layoutX="20.0" layoutY="533.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="187.0" fitWidth="600.0" layoutX="22.0" layoutY="608.0">
+               <image>
+                  <Image url="@images/game_assets/scroll_wide.png" />
+               </image>
+            </ImageView>
+            <Button id="leaveEditorButton" fx:id="leaveEditorButton" layoutX="20.0" layoutY="795.0" mnemonicParsing="false" onAction="#leaveEditor" prefHeight="78.0" prefWidth="222.0" styleClass="normalButton" text="%leave" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Button>
+            <Button id="saveMapButton" fx:id="saveMapButton" layoutX="378.0" layoutY="795.0" mnemonicParsing="false" onAction="#saveMap" prefHeight="78.0" prefWidth="222.0" styleClass="normalButton" text="%save.map" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Button>
+            <HBox layoutX="56.0" layoutY="143.0" prefHeight="100.0" prefWidth="528.0" spacing="12.0">
+               <children>
+                  <ImageView id="tilesPasture" fx:id="tilesPasture" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/pasture/pasture_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="tilesMountains" fx:id="tilesMountains" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/mountains/mountains_4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="tilesHills" fx:id="tilesHills" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/hills/hills_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="tilesForest" fx:id="tilesForest" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/forest/forest_3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="tilesFields" fx:id="tilesFields" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/fields/fields_2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="tilesDesert" fx:id="tilesDesert" fitHeight="90.0" fitWidth="90.0" onMouseClicked="#tileClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/desert/desert_2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="56.0" layoutY="397.0" prefHeight="100.0" prefWidth="528.0" spacing="5.0">
+               <children>
+                  <StackPane fx:id="numbers2" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="2" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers3" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="3" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers4" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="4" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers5" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="5" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers6" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="6" textAlignment="CENTER" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers8" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="8" textAlignment="CENTER" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers9" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="9" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers10" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="10" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers11" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="11" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="numbers12" onMouseClicked="#numberClicked" styleClass="card">
+                     <children>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/map%20assets/elements/number-bgs/neutral.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="12" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets left="2.0" />
+               </padding></HBox>
+            <HBox layoutX="56.0" layoutY="652.0" prefHeight="100.0" prefWidth="528.0">
+               <children>
+                  <ImageView fx:id="harborsLumber" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_lumber.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="harborsClay" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_brick.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="harborsWool" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_wool.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="harborsGrain" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_grain.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="harborsOre" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_ore.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="harborsGeneric" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#harborClicked" pickOnBounds="true" preserveRatio="true" styleClass="card">
+                     <image>
+                        <Image url="@images/map%20assets/harbor/harbor_generic.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding></HBox>
+            <Label layoutX="40.0" layoutY="40.0" prefHeight="47.0" prefWidth="196.0" text="%tiles" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="294.0" prefHeight="47.0" prefWidth="196.0" text="%numbers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="549.0" prefHeight="47.0" prefWidth="196.0" text="%harbors" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="439.0" layoutY="286.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="439.0" layoutY="32.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="439.0" layoutY="541.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <CheckBox fx:id="tilesRandomToggle" layoutX="454.0" layoutY="40.0" mnemonicParsing="false" onAction="#toggleRandomTiles" prefHeight="48.0" prefWidth="136.0" text="%random.select" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="numbersRandomToggle" layoutX="454.0" layoutY="294.0" mnemonicParsing="false" onAction="#toggleRandomNumbers" prefHeight="47.0" prefWidth="136.0" text="%random.select" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="harborsRandomToggle" layoutX="454.0" layoutY="549.0" mnemonicParsing="false" onAction="#toggleRandomHarbors" prefHeight="48.0" prefWidth="136.0" text="%random.select" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="268.0" layoutY="32.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <CheckBox fx:id="tilesRandomToggleType" layoutX="283.0" layoutY="40.0" mnemonicParsing="false" onAction="#toggleRandomTilesType" prefHeight="47.0" prefWidth="136.0" text="%random.tile" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="268.0" layoutY="286.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <CheckBox fx:id="numbersRandomToggleType" layoutX="283.0" layoutY="294.0" mnemonicParsing="false" onAction="#toggleRandomNumbersType" prefHeight="47.0" prefWidth="136.0" text="%random.number" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+            <ImageView fitHeight="70.0" fitWidth="161.0" layoutX="268.0" layoutY="541.0">
+               <image>
+                  <Image url="@images/game_assets/plank_2.png" />
+               </image>
+            </ImageView>
+            <CheckBox fx:id="harborsRandomToggleType" layoutX="283.0" layoutY="549.0" mnemonicParsing="false" onAction="#toggleRandomHarborsType" prefHeight="47.0" prefWidth="136.0" text="%random.harbor" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </Pane>
+      <Label fx:id="loadingLabel" layoutX="1006.0" layoutY="427.0" mouseTransparent="true" text="%loading.map" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Pane id="mapPane" fx:id="mapPane" layoutX="708.0" layoutY="73.0" prefHeight="750.0" prefWidth="813.0">
+         <children>
+            <ImageView fitHeight="896.0" fitWidth="982.0" layoutX="-90.0" layoutY="-72.0" mouseTransparent="true" pickOnBounds="true">
+               <image>
+                  <Image url="@images/game_assets/transparentFrame.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+   </children>
+</Pane>

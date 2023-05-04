@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="root" minWidth="500.0" xmlns="http://javafx.com/javafx/18"
+      fx:controller="de.uniks.pioneers.controller.TradingPartnerSubController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0"
+                prefWidth="500.0">
+        <ImageView fitHeight="200.0" fitWidth="500.0">
+            <Image url="@images/game_assets/plank_3.png"/>
+        </ImageView>
+        <HBox fx:id="hbox_trade_give" layoutX="262.0" layoutY="110.0" prefHeight="59.0" prefWidth="150.0"
+              spacing="10.0"/>
+        <ImageView fx:id="image_close" layoutX="420.0" layoutY="131.0" onMouseClicked="#hideMenu" pickOnBounds="true">
+            <Image url="@images/close.png"/>
+        </ImageView>
+        <ImageView fx:id="image_check" layoutX="420.0" layoutY="86.0" onMouseClicked="#acceptOffer" pickOnBounds="true">
+            <Image url="@images/check.png"/>
+        </ImageView>
+        <HBox fx:id="hbox_trade_players" layoutX="44.0" layoutY="31.0" prefHeight="73.0" prefWidth="268.0"
+              spacing="8.0"/>
+        <ImageView fx:id="current_player" fitHeight="80.0" fitWidth="80.0" layoutX="340.0" layoutY="27.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="202.0" layoutY="116.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@images/arrow_back.png"/>
+        </ImageView>
+        <HBox fx:id="hbox_trade_get" layoutX="44.0" layoutY="110.0" prefHeight="59.0" prefWidth="150.0" spacing="10.0"/>
+    </AnchorPane>
+</VBox>

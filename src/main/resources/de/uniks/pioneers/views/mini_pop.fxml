@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="root" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="276.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.MiniPopController">
+    <ImageView fitHeight="166.0" fitWidth="170.0" layoutX="65.0" layoutY="33.0" pickOnBounds="true">
+        <Image url="@images/game_assets/longest_road.png" />
+    </ImageView>
+    <ImageView id="image" fx:id="image" fitHeight="80.0" fitWidth="56.0" layoutX="123.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
+    <Label id="label" fx:id="label" alignment="CENTER" layoutX="81.0" layoutY="52.0" prefHeight="22.0" prefWidth="140.0">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font></Label>
+   <Label id="label" fx:id="text" alignment="CENTER" layoutX="81.0" layoutY="75.0" prefHeight="22.0" prefWidth="140.0">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+</Pane>

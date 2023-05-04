@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" id="root" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="375.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/18"
+      fx:controller="de.uniks.pioneers.controller.LongestRoadController">
+    <ImageView fitHeight="329.0" fitWidth="336.0" layoutX="27.0" layoutY="20.0">
+        <effect>
+            <DropShadow height="23.0" radius="11.0" width="23.0"/>
+        </effect>
+        <Image url="@images/game_assets/longest_road.png"/>
+    </ImageView>
+    <Label id="label" fx:id="label" alignment="CENTER" layoutX="59.0" layoutY="168.0" prefHeight="44.0"
+           prefWidth="275.0" text="Label">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <ImageView id="road1" fx:id="road1" fitHeight="70.0" fitWidth="70.0" layoutX="123.0" layoutY="219.0"
+               pickOnBounds="true" preserveRatio="true" rotate="45.0">
+        <Image url="@images/road.png"/>
+    </ImageView>
+    <ImageView id="road2" fx:id="road2" fitHeight="70.0" fitWidth="70.0" layoutX="171.0" layoutY="197.0"
+               pickOnBounds="true" preserveRatio="true" rotate="92.0">
+        <Image url="@images/road.png"/>
+    </ImageView>
+    <ImageView id="road3" fx:id="road3" fitHeight="70.0" fitWidth="70.0" layoutX="219.0" layoutY="219.0"
+               pickOnBounds="true" preserveRatio="true" rotate="137.0">
+        <Image url="@images/road.png"/>
+    </ImageView>
+    <Label alignment="CENTER" layoutX="123.0" layoutY="276.0" prefHeight="50.0" prefWidth="145.0" text="%+2VP"
+           textAlignment="CENTER"/>
+    <ImageView id="player_image" fx:id="player_image" fitHeight="66.0" fitWidth="72.0" layoutX="165.0" layoutY="60.0"
+               pickOnBounds="true" preserveRatio="true">
+        <effect>
+            <DropShadow/>
+        </effect>
+    </ImageView>
+    <Label id="name_label" fx:id="name_label" alignment="CENTER" layoutX="83.0" layoutY="133.0" prefHeight="35.0"
+           prefWidth="236.0" text="Label">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Label>
+    <ImageView id="knight" fx:id="knight" fitHeight="82.0" fitWidth="161.0" layoutX="169.0" layoutY="207.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@images/knight_Card.png"/>
+    </ImageView>
+</Pane>

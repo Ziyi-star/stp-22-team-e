@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="900.0" prefWidth="1600.0" styleClass="background" xmlns="http://javafx.com/javafx/17"
+      fx:controller="de.uniks.pioneers.controller.RegisterController">
+    <VBox alignment="CENTER" maxHeight="220.0" minHeight="220.0" prefHeight="220.0" prefWidth="100.0">
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets top="25.0"/>
+        </VBox.margin>
+        <ImageView fx:id="registerGameLogoImageView" fitHeight="230.0" fitWidth="300.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@images/stp_pioneers_logo.png"/>
+        </ImageView>
+    </VBox>
+    <VBox alignment="CENTER" maxHeight="100.0" minHeight="100.0" prefHeight="108.0" prefWidth="1600.0">
+        <ImageView fitHeight="115.0" fitWidth="620.0">
+            <Image url="@images/pioneers_logo.png"/>
+        </ImageView>
+    </VBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1600.0">
+        <Button id="beforeButton" fx:id="beforeButton" mnemonicParsing="false" onAction="#beforeAvatar"/>
+        <ImageView id="avatarImageView" fx:id="avatarImageView" fitHeight="106.0" fitWidth="128.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+        <Button id="nextButton" fx:id="nextButton" mnemonicParsing="false" onAction="#nextAvatar"/>
+    </HBox>
+    <VBox alignment="CENTER" prefHeight="379.0" prefWidth="1600.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <TextField id="registerUsernameInput" fx:id="registerUsernameInput" alignment="CENTER" maxHeight="40.0"
+                   maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0"
+                   promptText="%username">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="24.0" top="16.0"/>
+            </VBox.margin>
+        </TextField>
+        <PasswordField id="registerPasswordInput" fx:id="registerPasswordInput" alignment="CENTER" maxHeight="40.0"
+                       maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0"
+                       promptText="%password">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="24.0"/>
+            </VBox.margin>
+        </PasswordField>
+        <PasswordField id="registerRepeatPasswordInput" fx:id="registerRepeatPasswordInput" alignment="CENTER"
+                       maxHeight="40.0" maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0"
+                       prefWidth="200.0" promptText="%repeat.password">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </PasswordField>
+        <Label id="registerErrorLabel" fx:id="registerErrorLabel">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets top="12.0"/>
+            </VBox.margin>
+        </Label>
+        <Label id="registerResponseErrorLabel" fx:id="registerResponseErrorLabel">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="12.0"/>
+            </VBox.margin>
+        </Label>
+        <Button id="registerUserRegisterButton" fx:id="registerUserRegisterButton" mnemonicParsing="false"
+                onAction="#register" prefHeight="45.0" prefWidth="184.0" styleClass="normalButton" text="%register"
+                textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="24.0"/>
+            </VBox.margin>
+        </Button>
+        <Button id="registerBackToLoginButton" fx:id="registerBackToLoginButton" mnemonicParsing="false"
+                onAction="#backToLogin" prefHeight="30.0" prefWidth="110.0" styleClass="smallButton" text="%return"
+                textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </Button>
+    </VBox>
+    <VBox alignment="BOTTOM_LEFT" prefWidth="1600.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <fx:include source="logos.fxml"/>
+    </VBox>
+</VBox>

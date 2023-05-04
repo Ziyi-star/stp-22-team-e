@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.uniks.pioneers.controller.RulesController">
+   <ImageView fitHeight="900.0" fitWidth="1600.0">
+      <Image url="@images/landscape.png" />
+   </ImageView>
+   <ImageView fitHeight="978.0" fitWidth="1431.0" layoutX="279.0" layoutY="-5.0">
+      <effect>
+         <DropShadow height="4.0" radius="1.5" spread="1.0" width="4.0" />
+      </effect>
+      <Image url="@images/blackboard.png" />
+   </ImageView>
+   <Button id="exit_button" layoutX="84.0" layoutY="838.0" mnemonicParsing="false" onAction="#exit" prefHeight="51.0" prefWidth="191.0" styleClass="normalButton" text="%exit">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Button>
+   <ImageView id="howToImage" fitHeight="95.0" fitWidth="315.0" layoutX="30.0" layoutY="55.0" onMouseClicked="#showHowToWin" styleClass="rulesButton">
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+      <Image url="@images/game_assets/plank_2.png" />
+   </ImageView>
+   <Label id="howTo_Label" fx:id="howTo_Label" alignment="CENTER" layoutX="50.0" layoutY="71.0" mouseTransparent="true" prefHeight="60.0" prefWidth="275.0" text="%how.to.win" textFill="#9dd8f7">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Label>
+   <ImageView id="diceRollsImage" fitHeight="95.0" fitWidth="315.0" layoutX="30.0" layoutY="215.0" onMouseClicked="#showDiceRolls" styleClass="rulesButton">
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+      <Image url="@images/game_assets/plank_2.png" />
+   </ImageView>
+   <Label id="diceRolls_Label" fx:id="diceRolls_Label" alignment="CENTER" layoutX="50.0" layoutY="230.0" mouseTransparent="true" prefHeight="60.0" prefWidth="275.0" text="%dice.rules" textFill="#9dd8f7">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Label>
+   <ImageView id="buildingCostsImage" fitHeight="95.0" fitWidth="315.0" layoutX="30.0" layoutY="375.0" onMouseClicked="#showBuildingAndCosts" styleClass="rulesButton">
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+      <Image url="@images/game_assets/plank_2.png" />
+   </ImageView>
+   <Label id="buildingCosts_Label" fx:id="buildingCosts_Label" alignment="CENTER" layoutX="50.0" layoutY="392.0" mouseTransparent="true" prefHeight="60.0" prefWidth="275.0" text="%building.and.costs" textFill="#9dd8f7">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Label>
+   <ImageView id="developmentCardsImage" fitHeight="95.0" fitWidth="315.0" layoutX="30.0" layoutY="535.0" onMouseClicked="#showDevelopmentCards" styleClass="rulesButton">
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+      <Image url="@images/game_assets/plank_2.png" />
+   </ImageView>
+   <Label id="developmentCards_Label" fx:id="developmentCards_Label" alignment="CENTER" layoutX="50.0" layoutY="553.0" mouseTransparent="true" prefHeight="60.0" prefWidth="275.0" text="%development.cards" textFill="#9dd8f7">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Label>
+   <ImageView id="tradingImage" fitHeight="95.0" fitWidth="315.0" layoutX="30.0" layoutY="695.0" onMouseClicked="#showTrading" styleClass="rulesButton">
+      <effect>
+         <DropShadow height="2.0" radius="0.5" spread="1.0" width="2.0" />
+      </effect>
+      <Image url="@images/game_assets/plank_2.png" />
+   </ImageView>
+   <Label id="trading_Label" fx:id="trading_Label" alignment="CENTER" layoutX="50.0" layoutY="711.0" mouseTransparent="true" prefHeight="60.0" prefWidth="275.0" text="%trading" textFill="#9dd8f7">
+      <font>
+         <Font size="32.0" />
+      </font>
+   </Label>
+   <Pane id="howToPane" fx:id="howToPane" layoutX="418.0" layoutY="90.0" prefHeight="724.0" prefWidth="1115.0">
+      <ImageView layoutX="63.0" layoutY="127.0">
+         <Image url="@images/settlement.png" />
+      </ImageView>
+      <Label layoutX="25.0" layoutY="42.0" text="%text.1" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="57.0" layoutY="309.0">
+         <Image url="@images/development_Card_victorypoint.png" />
+      </ImageView>
+      <Pane layoutX="11.0" layoutY="426.0" prefHeight="70.0" prefWidth="144.0">
+         <ImageView fitHeight="58.0" fitWidth="51.0" layoutX="15.0" layoutY="6.0" rotate="30.0">
+            <Image url="@images/road.png" />
+         </ImageView>
+         <ImageView fitHeight="58.0" fitWidth="51.0" layoutX="48.0" layoutY="-16.0" rotate="90.0">
+            <Image url="@images/road.png" />
+         </ImageView>
+         <ImageView fitHeight="58.0" fitWidth="51.0" layoutX="84.0" layoutY="4.0" rotate="-30.0">
+            <Image url="@images/road.png" />
+         </ImageView>
+      </Pane>
+      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="47.0" layoutY="202.0">
+         <Image url="@images/city.png" />
+      </ImageView>
+      <ImageView layoutX="66.0" layoutY="525.0">
+         <Image url="@images/knight.png" />
+      </ImageView>
+      <Label layoutX="290.0" layoutY="127.0" text="%text.2" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="220.0" text="%text.3" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="327.0" text="%text.4" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="423.0" prefHeight="70.0" prefWidth="807.0" text="%text.5" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="127.0" text="%point.1" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="220.0" text="%point.1" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="327.0" text="%point.1" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="440.0" text="%point.2" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="159.0" layoutY="537.0" text="%point.2" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="520.0" prefHeight="70.0" prefWidth="807.0" text="%text.6" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="629.0" prefHeight="70.0" prefWidth="795.0" style="-fx-background-color: FFFFFF23;" text="%text.7" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </Pane>
+   <Pane id="diceRollsPane" fx:id="diceRollsPane" layoutX="418.0" layoutY="90.0" prefHeight="724.0" prefWidth="1115.0" visible="false">
+      <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="42.0" prefHeight="147.0" prefWidth="1077.0" text="%text.8" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="380.0" prefHeight="86.0" prefWidth="1077.0" text="%text.9" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="165.0" fitWidth="162.0" layoutX="225.0" layoutY="190.0">
+         <effect>
+            <DropShadow height="3.0" radius="1.0" spread="1.0" width="3.0" />
+         </effect>
+         <Image url="@images/five.png" />
+      </ImageView>
+      <ImageView fitHeight="165.0" fitWidth="162.0" layoutX="394.0" layoutY="190.0">
+         <effect>
+            <DropShadow height="3.0" radius="1.0" spread="1.0" width="3.0" />
+         </effect>
+         <Image url="@images/four.png" />
+      </ImageView>
+      <Label layoutX="579.0" layoutY="205.0" text="=" textFill="WHITE">
+         <font>
+            <Font size="92.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="147.0" fitWidth="150.0" layoutX="676.0" layoutY="200.0">
+         <Image url="@images/number_background.png" />
+      </ImageView>
+      <Label layoutX="727.0" layoutY="204.0" text="9">
+         <font>
+            <Font name="System Bold" size="96.0" />
+         </font>
+      </Label>
+      <Pane layoutX="40.0" layoutY="503.0">
+         <ImageView fitHeight="80.0" fitWidth="80.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <Label layoutX="25.0" layoutY="3.0" text="2">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="190.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="95.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="285.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="380.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="573.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <Label layoutX="598.0" layoutY="3.0" text="8" textFill="#9e1111">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="763.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="668.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="858.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="953.0">
+            <Image url="@images/number_background.png" />
+         </ImageView>
+         <Label layoutX="120.0" layoutY="3.0" text="3">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="215.0" layoutY="3.0" text="4">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="310.0" layoutY="3.0" text="5">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="405.0" layoutY="3.0" text="6" textFill="#9e1111">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="693.0" layoutY="3.0" text="9">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="774.0" layoutY="3.0" text="10">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="869.0" layoutY="3.0" text="11">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <Label layoutX="963.0" layoutY="3.0" text="12">
+            <font>
+               <Font name="System Bold" size="51.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="123.0" fitWidth="63.0" layoutX="488.0" layoutY="-32.0">
+            <Image url="@images/robber_rules.png" />
+         </ImageView>
+         <Label layoutX="3.0" layoutY="80.0" prefHeight="58.0" prefWidth="1033.0" text=" 3%     6%     8%    11%  14%   17%   14%   11%    8%    6%     3%" textFill="WHITE">
+            <font>
+               <Font size="36.0" />
+            </font>
+         </Label>
+      </Pane>
+   </Pane>
+   <Pane id="buildingCostsPane" fx:id="buildingCostsPane" layoutX="418.0" layoutY="90.0" prefHeight="724.0" prefWidth="1115.0" visible="false">
+      <ImageView layoutX="64.0" layoutY="225.0">
+         <Image url="@images/settlement.png" />
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="57.0" layoutY="409.0">
+         <Image url="@images/development_icon.png" />
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="59.0" layoutX="56.0" layoutY="113.0">
+         <Image url="@images/road.png" />
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="72.0" layoutX="50.0" layoutY="313.0">
+         <Image url="@images/city.png" />
+      </ImageView>
+      <Label layoutX="750.0" layoutY="131.0" text="%wood.brick" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="750.0" layoutY="230.0" text="%wood.brick.sheep.grain" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="750.0" layoutY="330.0" text="%grain.ore" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="130.0" text="%road" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="230.0" text="%settlement" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="330.0" text="%upgrade.to.city" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="430.0" text="%development.card" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="550.0" prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: FFFFFF23;" text="%text.10" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="750.0" layoutY="431.0" text="%sheep.grain.ore" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="122.0" text="=" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="221.0" text="=" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="321.0" text="=" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="422.0" text="=" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="515.0" layoutY="117.0">
+         <Image url="@images/lumber_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="565.0" layoutY="117.0">
+         <Image url="@images/brick_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="515.0" layoutY="216.0">
+         <Image url="@images/lumber_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="565.0" layoutY="216.0">
+         <Image url="@images/brick_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="615.0" layoutY="216.0">
+         <Image url="@images/wool_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="665.0" layoutY="216.0">
+         <Image url="@images/grain_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="515.0" layoutY="316.0">
+         <Image url="@images/grain_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="565.0" layoutY="316.0">
+         <Image url="@images/grain_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="615.0" layoutY="316.0">
+         <Image url="@images/ore_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="665.0" layoutY="316.0">
+         <Image url="@images/ore_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="515.0" layoutY="417.0">
+         <Image url="@images/wool_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="565.0" layoutY="417.0">
+         <Image url="@images/grain_Card.png" />
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="43.0" layoutX="615.0" layoutY="416.0">
+         <Image url="@images/ore_Card.png" />
+      </ImageView>
+   </Pane>
+   <Pane id="developmentCardsPane" fx:id="developmentCardsPane" layoutX="418.0" layoutY="90.0" prefHeight="724.0" prefWidth="1115.0" visible="false">
+      <Label alignment="TOP_LEFT" layoutX="25.0" layoutY="42.0" prefHeight="70.0" prefWidth="1077.0" text="%text.11" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="124.0" prefHeight="70.0" prefWidth="575.0" text="%text.12" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="240.0" prefWidth="575.0" text="%text.13" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="340.0" prefWidth="575.0" text="%text.14" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="140.0" prefHeight="35.0" prefWidth="178.0" text="%knight.cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="240.0" text="%road.building.cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="340.0" text="%plenty.cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="440.0" text="%monopoly.cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="424.0" prefHeight="70.0" prefWidth="575.0" text="%text.15" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="633.0" prefHeight="70.0" prefWidth="795.0" style="-fx-background-color: FFFFFF23;" text="%text.17" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="60.0" layoutY="322.0">
+         <Image url="@images/development_Card_plenty.png" />
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="60.0" layoutY="223.0">
+         <Image url="@images/development_Card_road.png" />
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="60.0" layoutY="124.0">
+         <Image url="@images/development_Card_knight.png" />
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="60.0" layoutY="424.0">
+         <Image url="@images/development_Card_monopoly.png" />
+      </ImageView>
+      <Label layoutX="155.0" layoutY="540.0" text="%victory.point.cards" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="520.0" layoutY="523.0" prefHeight="70.0" prefWidth="575.0" text="%text.16" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="70.0" fitWidth="51.0" layoutX="60.0" layoutY="523.0">
+         <Image url="@images/development_Card_victorypoint.png" />
+      </ImageView>
+   </Pane>
+   <Pane id="tradingPane" fx:id="tradingPane" layoutX="418.0" layoutY="90.0" prefHeight="724.0" prefWidth="1115.0" visible="false">
+      <Label layoutX="25.0" layoutY="42.0" text="%text.18" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="140.0" prefHeight="70.0" prefWidth="865.0" text="%text.19" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="255.0" prefHeight="70.0" prefWidth="865.0" text="%text.20" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="370.0" prefHeight="70.0" prefWidth="865.0" text="%text.21" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="485.0" prefHeight="105.0" prefWidth="865.0" text="%text.22" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="78.0" layoutY="146.0">
+         <Image url="@images/bank.png" />
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="55.0" layoutX="80.0" layoutY="509.0">
+         <Image url="@images/trade.png" />
+      </ImageView>
+      <ImageView layoutX="47.0" layoutY="220.0">
+         <Image url="@images/harbor_generic.png" />
+      </ImageView>
+      <ImageView layoutX="48.0" layoutY="335.0">
+         <Image url="@images/harbor_lumber.png" />
+      </ImageView>
+   </Pane>
+</AnchorPane>

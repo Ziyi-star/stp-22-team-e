@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" styleClass="background"
+      xmlns="http://javafx.com/javafx/18" fx:controller="de.uniks.pioneers.controller.LoginController">
+    <Pane minHeight="220.0" prefHeight="220.0" prefWidth="1600.0">
+        <VBox.margin>
+            <Insets top="25.0"/>
+        </VBox.margin>
+        <VBox alignment="CENTER" layoutX="-1.0" maxHeight="220.0" minHeight="100.0" mouseTransparent="true"
+              prefHeight="220.0" prefWidth="1601.0">
+            <ImageView id="imageView_LoginAndTitleScreen_Pioneers_TopLogo" fitHeight="230.0" fitWidth="300.0"
+                       pickOnBounds="true" preserveRatio="true">
+                <Image url="@images/stp_pioneers_logo.png"/>
+                <VBox.margin>
+                    <Insets left="2.0"/>
+                </VBox.margin>
+            </ImageView>
+        </VBox>
+        <ImageView id="imageview_settings" fx:id="imageview_settings" fitHeight="51.0" fitWidth="71.0" layoutX="5.0"
+                   layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@images/settings.png"/>
+        </ImageView>
+        <Button id="credits_button" fx:id="credits_button" layoutX="1400.0" layoutY="820.0" mnemonicParsing="false"
+                onAction="#credits" prefHeight="34.0" prefWidth="150.0" styleClass="smallButton" text="%credits"
+                textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Button>
+    </Pane>
+    <VBox alignment="CENTER" maxHeight="100.0" minHeight="100.0" prefHeight="219.0" prefWidth="1600.0">
+        <ImageView fitHeight="115.0" fitWidth="620.0">
+            <Image url="@images/pioneers_logo.png"/>
+        </ImageView>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+    </VBox>
+    <VBox alignment="CENTER" prefHeight="494.0" prefWidth="1600.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <TextField id="textField_LoginAndTitleScreen_Username_Input"
+                   fx:id="textField_LoginAndTitleScreen_Username_Input" alignment="CENTER" maxHeight="40.0"
+                   maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0"
+                   promptText="%username">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="36.0" top="12.0"/>
+            </VBox.margin>
+        </TextField>
+        <PasswordField id="passwordField_LoginAndTitleScreen_Password_Input"
+                       fx:id="passwordField_LoginAndTitleScreen_Password_Input" alignment="CENTER" maxHeight="40.0"
+                       maxWidth="200.0" minHeight="40.0" minWidth="200.0" prefHeight="40.0" prefWidth="200.0"
+                       promptText="%password">
+            <font>
+                <Font size="14.0"/>
+            </font>
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+        </PasswordField>
+        <HBox alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefHeight="50.0" prefWidth="200.0">
+            <CheckBox id="checkBox_LoginAndTitleScreen_RememberMe" fx:id="checkBox_LoginAndTitleScreen_RememberMe"
+                      mnemonicParsing="false" text="%rememberme">
+                <HBox.margin>
+                    <Insets bottom="8.0" top="12.0"/>
+                </HBox.margin>
+            </CheckBox>
+        </HBox>
+        <Label fx:id="label_LoginAndTitleScreen_Password_Incorrect">
+            <VBox.margin>
+                <Insets bottom="8.0" top="8.0"/>
+            </VBox.margin>
+        </Label>
+        <Button id="button_LoginAndTitleScreen_Login" fx:id="button_LoginAndTitleScreen_Login" mnemonicParsing="false"
+                onAction="#login" prefHeight="45.0" prefWidth="170.0" styleClass="normalButton" text="%login"
+                textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+            <VBox.margin>
+                <Insets bottom="24.0" top="8.0"/>
+            </VBox.margin>
+        </Button>
+        <Button id="button_LoginAndTitleScreen_Register" fx:id="button_LoginAndTitleScreen_Register"
+                mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="150.0"
+                styleClass="smallButton" text="%register" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Button>
+        <Button id="leave_button" fx:id="leave_button" mnemonicParsing="false" onAction="#leave" prefHeight="34.0"
+                prefWidth="114.0" styleClass="smallButton" text="%leave" textFill="WHITE">
+            <VBox.margin>
+                <Insets top="24.0"/>
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Button>
+    </VBox>
+    <VBox alignment="BOTTOM_LEFT" mouseTransparent="true" prefWidth="1600.0">
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+        <opaqueInsets>
+            <Insets bottom="5.0"/>
+        </opaqueInsets>
+        <fx:include source="logos.fxml"/>
+    </VBox>
+</VBox>

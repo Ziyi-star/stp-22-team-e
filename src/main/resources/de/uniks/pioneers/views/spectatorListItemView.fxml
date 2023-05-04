@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="spectatorPane" fx:id="spectatorPane" prefHeight="140.0"
+            prefWidth="265.0" xmlns="http://javafx.com/javafx/18"
+            fx:controller="de.uniks.pioneers.controller.SpectatorListViewCell">
+    <Pane prefHeight="140.0" prefWidth="265.6"
+          style="-fx-border-color: grey; -fx-border-insets: 9; -fx-background-color: FFFFFF24;">
+        <Label id="spectator_name" fx:id="spectator_name" alignment="CENTER" layoutX="29.0" layoutY="57.0"
+               prefHeight="22.0" prefWidth="121.0" style="-fx-background-color: FFFFFF2F;" text="Player 1">
+            <font>
+                <Font size="17.0"/>
+            </font>
+        </Label>
+        <ImageView id="spectator_image" fx:id="spectator_image" fitHeight="64.0" fitWidth="64.0" layoutX="186.0"
+                   layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" height="10.0" radius="4.5" spread="0.9" width="10.0">
+                    <color>
+                        <Color red="0.5684210658073425" green="0.5684210658073425" blue="0.5684210658073425"/>
+                    </color>
+                </DropShadow>
+            </effect>
+        </ImageView>
+    </Pane>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="robMenuRoot" xmlns="http://javafx.com/javafx/17"
+      fx:controller="de.uniks.pioneers.controller.RobSubController">
+    <Pane id="robMenuRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="200.0" prefWidth="412.0">
+        <ImageView fitHeight="206.0" fitWidth="410.0" layoutX="-1.0" layoutY="-2.0">
+            <Image url="@images/game_assets/scroll_wide.png"/>
+        </ImageView>
+        <Label layoutX="23.0" layoutY="32.0" prefHeight="34.0" prefWidth="270.0" text="%choose.rob.victim">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+        <HBox id="playerHBox" fx:id="playerHBox" layoutX="28.0" layoutY="74.0" prefHeight="92.0" prefWidth="292.0"
+              spacing="32.0">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+            </padding>
+        </HBox>
+        <ImageView id="checkmark" fx:id="checkmark" fitHeight="50.0" fitWidth="50.0" layoutX="336.0" layoutY="117.0"
+                   onMouseClicked="#confirmRob" pickOnBounds="true" preserveRatio="true">
+            <Image url="@images/check.png"/>
+        </ImageView>
+    </Pane>
+</VBox>

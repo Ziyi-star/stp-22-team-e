@@ -1,6 +1,6 @@
 # Projekt Pioneers
 
-**Developed by Team E for Softwaretechnik Praktikum (STP) 2022**
+**Developed by Team Event Horizon for Softwaretechnik Praktikum (STP) in Universität Kassel 2022**
 
 Projekt Pioneers is a multiplayer online game inspired by the classic strategy board game "The Settlers of Catan." It was developed in four release phases, with each phase introducing new functionalities, gameplay mechanics, and technical improvements.
 
